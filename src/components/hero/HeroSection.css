@@ -1,0 +1,237 @@
+/*
+========================================
+HERO SECTION - PIXEL STYLES
+========================================
+Main landing screen with Minecraft aesthetic
+*/
+
+.hero-section {
+  width: 100%;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(224, 242, 255, 0.7) 0%,
+      rgba(107, 182, 255, 0.6) 40%,
+      rgba(71, 163, 255, 0.5) 100%
+    ),
+    url("../../assets/images/background/background_1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 40px 20px;
+}
+
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+/* Main Content Grid */
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 4px solid var(--pixel-black);
+  box-shadow: 12px 12px 0 var(--pixel-black);
+}
+
+/* Helper Character - Floating */
+.hero-helper {
+  position: absolute;
+  top: -40px;
+  right: 60px;
+  z-index: 50;
+  animation: float 3s ease-in-out infinite;
+}
+
+.helper-image {
+  width: 60px;
+  height: auto;
+  filter: drop-shadow(3px 3px 0 var(--pixel-black));
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Text Content */
+.hero-text {
+  text-align: left;
+  z-index: 20;
+}
+
+.hero-title {
+  font-size: 3rem;
+  color: var(--pixel-white);
+  margin-bottom: 20px;
+  line-height: 1.2;
+  text-shadow: 6px 6px 0 var(--pixel-black);
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: var(--pixel-yellow);
+  margin-bottom: 30px;
+  text-shadow: 3px 3px 0 var(--pixel-black);
+  letter-spacing: 2px;
+}
+
+.hero-info {
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.75rem;
+  color: var(--pixel-white);
+  text-shadow: 2px 2px 0 var(--pixel-black);
+}
+
+.info-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  filter: drop-shadow(2px 2px 0 var(--pixel-black));
+}
+
+.hero-cta {
+  margin-top: 20px;
+  font-size: 1rem;
+  padding: 20px 40px;
+  background-color: var(--button-primary);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Main Builder Character */
+.hero-character {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.builder-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  filter: drop-shadow(8px 8px 0 var(--pixel-black));
+  animation: bounce 4s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Responsive Layout */
+@media (max-width: 968px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .builder-image {
+    max-width: 300px;
+  }
+
+  .hero-helper {
+    top: -30px;
+    right: 30px;
+  }
+
+  .helper-image {
+    width: 50px;
+  }
+
+  .info-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .info-item {
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.7rem;
+  }
+
+  .hero-cta {
+    padding: 16px 32px;
+    font-size: 0.85rem;
+  }
+
+  .builder-image {
+    max-width: 240px;
+  }
+
+  .hero-content {
+    padding: 20px;
+  }
+
+  .info-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .info-item {
+    font-size: 0.6rem;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,193 @@
+/*
+========================================
+PIXEL THEME - GLOBAL STYLES
+========================================
+Minecraft-inspired pixel art theme
+Flat colors, blocky UI, hard edges only
+*/
+
+/* Import Pixel Font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+/* Root Variables - Pixel Color Palette */
+:root {
+  /* Sky & Background Colors */
+  --pixel-sky-blue: #47a3ff;
+  --pixel-sky-light: #6bb6ff;
+  --pixel-sky-dark: #2563eb;
+
+  /* Earth & Block Colors */
+  --pixel-grass: #7bc943;
+  --pixel-dirt: #8b5a3c;
+  --pixel-stone: #808080;
+  --pixel-dark-stone: #4a4a4a;
+  --pixel-wood: #8b6f47;
+
+  /* Game HUD / Menu Colors */
+  --hud-background: #2d2d2d;
+  --hud-border: #1a1a1a;
+
+  /* UI Colors */
+  --pixel-white: #ffffff;
+  --pixel-black: #000000;
+  --pixel-shadow: #000000;
+
+  /* Accent Colors */
+  --pixel-yellow: #ffd700;
+  --pixel-orange: #ff8c00;
+  --pixel-red: #dc143c;
+
+  /* Button Colors */
+  --button-primary: #7bc943;
+  --button-primary-dark: #5a9932;
+  --button-text: #ffffff;
+
+  /* Pixel Grid Size */
+  --pixel-size: 4px;
+  --pixel-border: 4px;
+}
+
+/* Global Reset & Pixel Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background-color: var(--pixel-white);
+  color: var(--pixel-white);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Pixel Heading Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Press Start 2P", cursive;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 2rem;
+  text-shadow: 4px 4px 0 var(--pixel-shadow);
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 0 var(--pixel-shadow);
+}
+
+h3 {
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 0 var(--pixel-shadow);
+}
+
+/* Paragraph Text */
+p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+/* Pixel Button Base Style */
+.pixel-button {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.875rem;
+  padding: 16px 32px;
+  background-color: var(--button-primary);
+  color: var(--button-text);
+  border: 4px solid var(--pixel-black);
+  cursor: pointer;
+  text-transform: uppercase;
+  position: relative;
+  transition: none;
+  box-shadow: 6px 6px 0 var(--pixel-black);
+}
+
+.pixel-button:hover {
+  background-color: var(--button-primary-dark);
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 var(--pixel-black);
+}
+
+.pixel-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 2px 2px 0 var(--pixel-black);
+}
+
+/* Pixel Border Utility */
+.pixel-border {
+  border: var(--pixel-border) solid var(--pixel-black);
+}
+
+/* Pixel Shadow Utility */
+.pixel-shadow {
+  box-shadow: 8px 8px 0 var(--pixel-black);
+}
+
+.pixel-shadow-small {
+  box-shadow: 4px 4px 0 var(--pixel-black);
+}
+
+/* Pixel Block Container */
+.pixel-block {
+  background-color: var(--pixel-grass);
+  border: 4px solid var(--pixel-black);
+  padding: 20px;
+  position: relative;
+}
+
+/* Hard Edge Utility (No Anti-aliasing) */
+.pixel-crisp {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Remove Default Smoothing */
+img {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Container Utility */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 0.65rem;
+  }
+
+  .pixel-button {
+    font-size: 0.75rem;
+    padding: 12px 24px;
+  }
+}

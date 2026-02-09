@@ -1,0 +1,54 @@
+import React from "react";
+import "./Navbar.css";
+
+// Event mascot - branding identifier
+import scdEventMascot from "../../assets/images/characters/scd_event_mascot.png";
+
+const Navbar = () => {
+  return (
+    <nav className="navbar">
+      <div className="navbar-container">
+        {/* Left: Brand identity with mascot */}
+        <div className="navbar-brand">
+          <img
+            src={scdEventMascot}
+            alt="SCD Mascot"
+            className="navbar-mascot pixel-crisp"
+          />
+          <span className="navbar-title">Student Community Day</span>
+        </div>
+
+        {/* Center/Right: Navigation menu */}
+        <ul className="navbar-menu">
+          <li className="navbar-item">
+            <a href="#about" className="navbar-link">
+              About
+            </a>
+          </li>
+          <li className="navbar-item">
+            <a href="#agenda" className="navbar-link">
+              Agenda
+            </a>
+          </li>
+          <li className="navbar-item">
+            <a href="#speakers" className="navbar-link">
+              Speakers
+            </a>
+          </li>
+          <li className="navbar-item">
+            <a href="#sponsors" className="navbar-link">
+              Sponsors
+            </a>
+          </li>
+        </ul>
+
+        {/* Right: Primary CTA */}
+        <div className="navbar-cta">
+          <button className="pixel-button navbar-register-btn">Register</button>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
