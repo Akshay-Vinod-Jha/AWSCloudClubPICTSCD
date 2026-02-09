@@ -54,7 +54,7 @@ Achievement display / Impact area
 /* Content Layout */
 .stats-content {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 400px 1fr;
   gap: 60px;
   align-items: center;
 }
@@ -68,7 +68,7 @@ Achievement display / Impact area
 
 .golem-image {
   width: 100%;
-  max-width: 280px;
+  max-width: 650px;
   height: auto;
   filter: drop-shadow(8px 8px 0 rgba(0, 0, 0, 0.5));
 }
@@ -136,7 +136,7 @@ Achievement display / Impact area
   }
 
   .golem-image {
-    max-width: 200px;
+    max-width: 400px;
   }
 
   .stats-grid {
@@ -176,6 +176,6 @@ Achievement display / Impact area
   }
 
   .golem-image {
-    max-width: 150px;
+    max-width: 220px;
   }
 }

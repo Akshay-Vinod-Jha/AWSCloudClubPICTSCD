@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Navbar.css";
+import { addPixelBurst } from "../../utils/pixelBurst";
 
 // Event mascot - branding identifier
 import scdEventMascot from "../../assets/images/characters/scd_event_mascot.png";
+import cloudHelper from "../../assets/images/characters/cloud_helper.png";
 
 const Navbar = () => {
+  const registerBtnRef = useRef(null);
+
+  useEffect(() => {
+    if (registerBtnRef.current) {
+      return addPixelBurst(registerBtnRef.current, cloudHelper);
+    }
+  }, []);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -44,7 +54,12 @@ const Navbar = () => {
 
         {/* Right: Primary CTA */}
         <div className="navbar-cta">
-          <button className="pixel-button navbar-register-btn">Register</button>
+          <button
+            ref={registerBtnRef}
+            className="pixel-button navbar-register-btn"
+          >
+            Register
+          </button>
         </div>
       </div>
     </nav>

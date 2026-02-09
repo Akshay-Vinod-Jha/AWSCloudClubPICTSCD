@@ -59,7 +59,7 @@ Main landing screen with Minecraft aesthetic
 }
 
 .helper-image {
-  width: 60px;
+  width: 100px;
   height: auto;
   filter: drop-shadow(3px 3px 0 var(--pixel-black));
 }
@@ -87,6 +87,45 @@ Main landing screen with Minecraft aesthetic
   margin-bottom: 20px;
   line-height: 1.2;
   text-shadow: 6px 6px 0 var(--pixel-black);
+  animation: pixelReveal 800ms steps(10) forwards;
+  clip-path: inset(0 100% 0 0);
+}
+
+/* Pixel Reveal Animation - Minecraft Chunk Loading Style */
+@keyframes pixelReveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  10% {
+    clip-path: inset(0 90% 0 0);
+  }
+  20% {
+    clip-path: inset(0 80% 0 0);
+  }
+  30% {
+    clip-path: inset(0 70% 0 0);
+  }
+  40% {
+    clip-path: inset(0 60% 0 0);
+  }
+  50% {
+    clip-path: inset(0 50% 0 0);
+  }
+  60% {
+    clip-path: inset(0 40% 0 0);
+  }
+  70% {
+    clip-path: inset(0 30% 0 0);
+  }
+  80% {
+    clip-path: inset(0 20% 0 0);
+  }
+  90% {
+    clip-path: inset(0 10% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0% 0 0);
+  }
 }
 
 .hero-subtitle {
@@ -125,17 +164,6 @@ Main landing screen with Minecraft aesthetic
   font-size: 1rem;
   padding: 20px 40px;
   background-color: var(--button-primary);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
 }
 
 /* Main Builder Character */
@@ -148,7 +176,7 @@ Main landing screen with Minecraft aesthetic
 
 .builder-image {
   width: 100%;
-  max-width: 400px;
+  max-width: 500px;
   height: auto;
   filter: drop-shadow(8px 8px 0 var(--pixel-black));
   animation: bounce 4s ease-in-out infinite;
@@ -181,7 +209,7 @@ Main landing screen with Minecraft aesthetic
   }
 
   .builder-image {
-    max-width: 300px;
+    max-width: 380px;
   }
 
   .hero-helper {
@@ -190,7 +218,7 @@ Main landing screen with Minecraft aesthetic
   }
 
   .helper-image {
-    width: 50px;
+    width: 75px;
   }
 
   .info-icon {
@@ -218,7 +246,7 @@ Main landing screen with Minecraft aesthetic
   }
 
   .builder-image {
-    max-width: 240px;
+    max-width: 300px;
   }
 
   .hero-content {

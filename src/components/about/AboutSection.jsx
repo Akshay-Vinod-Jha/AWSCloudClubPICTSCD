@@ -12,10 +12,8 @@ const AboutSection = () => {
   return (
     <section className="about-section">
       <div className="about-container">
-        {/* Section Heading */}
         <div className="about-header">
           <h2 className="about-title">What is Student Community Day?</h2>
-          {/* Decorative companion character */}
           <img
             src={cloudSheep}
             alt="Cloud Companion"
@@ -23,37 +21,42 @@ const AboutSection = () => {
           />
         </div>
 
-        {/* Main Content Area */}
         <div className="about-content">
-          {/* Text Content Card */}
-          <div className="about-card">
+          <div className="about-card reveal reveal--fade">
             <p className="about-description">
               Student Community Day is a student-led cloud learning event
               focused on building, learning, and exploring cloud technologies
               together through talks, workshops, and community interaction.
             </p>
 
-            {/* Highlights */}
             <div className="about-highlights">
-              <div className="highlight-item">
+              <div className="highlight-item reveal reveal--slide">
                 <span className="highlight-icon">▶</span>
                 <span className="highlight-text">Hands-on workshops</span>
               </div>
-              <div className="highlight-item">
+              <div
+                className="highlight-item reveal reveal--slide"
+                style={{ animationDelay: "120ms" }}
+              >
                 <span className="highlight-icon">▶</span>
                 <span className="highlight-text">
                   Student-friendly sessions
                 </span>
               </div>
-              <div className="highlight-item">
+              <div
+                className="highlight-item reveal reveal--slide"
+                style={{ animationDelay: "240ms" }}
+              >
                 <span className="highlight-icon">▶</span>
                 <span className="highlight-text">Community networking</span>
               </div>
             </div>
           </div>
 
-          {/* Student Explorer Character */}
-          <div className="about-character">
+          <div
+            className="about-character reveal reveal--drop"
+            style={{ animationDelay: "150ms" }}
+          >
             <img
               src={studentExplorer}
               alt="Student Explorer"

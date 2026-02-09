@@ -101,17 +101,19 @@ Game menu bar / HUD style navigation
   color: var(--pixel-black);
   border: 3px solid var(--pixel-black);
   box-shadow: 4px 4px 0 var(--pixel-black);
+  transition:
+    transform 100ms steps(2),
+    box-shadow 100ms steps(2),
+    background-color 100ms steps(2);
 }
 
 .navbar-register-btn:hover {
   background-color: var(--pixel-orange);
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0 var(--pixel-black);
 }
 
 .navbar-register-btn:active {
-  transform: translate(3px, 3px);
-  box-shadow: 1px 1px 0 var(--pixel-black);
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--pixel-black);
 }
 
 /* Responsive Behavior */

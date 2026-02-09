@@ -1,0 +1,325 @@
+/*
+========================================
+WORKSHOPS SECTION - LEARNING ZONE / TRAINING AREA
+========================================
+Hands-on practice / Training camp area
+*/
+
+.workshops-section {
+  width: 100%;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(107, 203, 119, 0.5) 0%,
+      rgba(76, 175, 80, 0.4) 100%
+    ),
+    url("../../assets/images/background/background_1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-top: 4px solid var(--pixel-grass);
+  border-bottom: 4px solid var(--pixel-dirt);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.workshops-container {
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+}
+
+/* Section Header */
+.workshops-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.workshops-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  color: #f5f5f5;
+  text-shadow:
+    4px 4px 0 var(--pixel-black),
+    0 0 20px rgba(76, 175, 80, 0.6);
+  text-transform: uppercase;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.workshops-subtitle {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.75rem;
+  color: #47a3ff;
+  text-shadow: 2px 2px 0 var(--pixel-black);
+  text-transform: uppercase;
+}
+
+/* Main Content Layout */
+.workshops-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Workshop Guide Character - Left Anchor */
+.workshops-guide {
+  position: sticky;
+  top: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.guide-instructor {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  filter: drop-shadow(8px 8px 0 rgba(0, 0, 0, 0.5));
+}
+
+/* Workshops Grid - 3 Column Training Modules */
+.workshops-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Workshop Card - Training Module Style */
+.workshop-card {
+  background-color: #4caf50;
+  border: 6px solid #8b4513;
+  padding: 25px;
+  position: relative;
+  box-shadow:
+    8px 8px 0 rgba(0, 0, 0, 0.7),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.3),
+    inset 0 4px 0 rgba(139, 195, 74, 0.4);
+  transition: transform 0.1s ease;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.workshop-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow:
+    11px 11px 0 rgba(0, 0, 0, 0.7),
+    inset 0 -4px 0 rgba(0, 0, 0, 0.3),
+    inset 0 4px 0 rgba(139, 195, 74, 0.4);
+}
+
+/* Drop animation triggers when card becomes visible */
+.workshop-card.reveal--drop.is-visible {
+  animation:
+    revealDrop 400ms steps(6) forwards,
+    unlockHighlight 300ms steps(5) forwards 450ms;
+}
+
+/* Helper Icon Accent */
+.workshop-helper-icon {
+  position: absolute;
+  top: -15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background-color: #47a3ff;
+  border: 3px solid var(--pixel-black);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.helper-accent {
+  width: 28px;
+  height: auto;
+  filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.5));
+}
+
+/* Workshop Header */
+.workshop-header {
+  border-bottom: 4px solid #8b4513;
+  padding-bottom: 12px;
+}
+
+.workshop-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.85rem;
+  color: #f5f5f5;
+  text-shadow: 3px 3px 0 var(--pixel-black);
+  text-transform: uppercase;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Workshop Description */
+.workshop-description {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.6rem;
+  color: #f5f5f5;
+  line-height: 1.7;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.7);
+  margin: 0;
+  flex: 1;
+}
+
+/* Workshop Metadata */
+.workshop-metadata {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 3px solid rgba(139, 69, 19, 0.5);
+}
+
+/* Duration Tag */
+.workshop-duration {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(71, 163, 255, 0.2);
+  border: 3px solid #47a3ff;
+  padding: 8px 12px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+.metadata-label {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  color: #47a3ff;
+}
+
+.metadata-value {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.6rem;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 0 var(--pixel-black);
+}
+
+/* Level Tag */
+.workshop-level {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.6rem;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 0 var(--pixel-black);
+  text-transform: uppercase;
+  padding: 8px 12px;
+  border: 3px solid var(--pixel-black);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.level-beginner {
+  background-color: #8bc34a;
+}
+
+.level-intermediate {
+  background-color: #ff9800;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .workshops-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .workshops-content {
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+  }
+
+  .guide-instructor {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 968px) {
+  .workshops-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .workshops-guide {
+    position: static;
+    order: -1;
+  }
+
+  .guide-instructor {
+    max-width: 180px;
+  }
+
+  .workshops-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .workshop-card {
+    min-height: 300px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .workshops-section {
+    padding: 60px 15px;
+  }
+
+  .workshops-title {
+    font-size: 1.5rem;
+  }
+
+  .workshops-subtitle {
+    font-size: 0.65rem;
+  }
+
+  .workshops-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .workshop-card {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .workshop-helper-icon {
+    width: 35px;
+    height: 35px;
+    top: -12px;
+  }
+
+  .helper-accent {
+    width: 22px;
+  }
+
+  .workshop-title {
+    font-size: 0.75rem;
+  }
+
+  .workshop-description {
+    font-size: 0.58rem;
+  }
+
+  .metadata-value {
+    font-size: 0.55rem;
+  }
+
+  .workshop-level {
+    font-size: 0.55rem;
+    padding: 6px 10px;
+  }
+
+  .guide-instructor {
+    max-width: 140px;
+  }
+}

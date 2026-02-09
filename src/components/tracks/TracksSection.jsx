@@ -8,31 +8,37 @@ import "./TracksSection.css";
 import cloudExplorer from "../../assets/images/characters/cloud_explorer.png";
 import cloudBird from "../../assets/images/characters/cloud_bird.png";
 
+// Track icon imports - Pixel art icons
+import cloudTrackIcon from "../../assets/images/icons/cloud_track_icon.jpg";
+import computeTrackIcon from "../../assets/images/icons/compute_track_icon.jpg";
+import devopsTrackIcon from "../../assets/images/icons/devops_track_icon.jpg";
+import aiTrackIcon from "../../assets/images/icons/ai_track_icon.jpg";
+
 const TracksSection = () => {
   const tracks = [
     {
       title: "Cloud Fundamentals",
       description:
         "Build a strong foundation in cloud computing concepts, AWS core services, and architecture basics.",
-      symbol: "☁",
+      icon: cloudTrackIcon,
     },
     {
       title: "Compute & Storage",
       description:
         "Master EC2, Lambda, S3, and storage solutions for scalable cloud infrastructure.",
-      symbol: "⚡",
+      icon: computeTrackIcon,
     },
     {
       title: "DevOps & CI/CD",
       description:
         "Learn deployment automation, containerization, and continuous integration pipelines.",
-      symbol: "⚙",
+      icon: devopsTrackIcon,
     },
     {
       title: "AI / ML & GenAI",
       description:
         "Explore machine learning services, generative AI, and intelligent cloud applications.",
-      symbol: "🧠",
+      icon: aiTrackIcon,
     },
   ];
 
@@ -42,7 +48,7 @@ const TracksSection = () => {
       <img
         src={cloudBird}
         alt="Flying Bird"
-        className="tracks-bird pixel-crisp"
+        className="tracks-bird pixel-crisp pixel-float"
       />
 
       <div className="tracks-container">
@@ -66,8 +72,18 @@ const TracksSection = () => {
           {/* Tracks Grid */}
           <div className="tracks-grid">
             {tracks.map((track, index) => (
-              <div key={index} className="track-card">
-                <div className="track-symbol">{track.symbol}</div>
+              <div
+                key={index}
+                className="track-card reveal reveal--drop"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="track-symbol">
+                  <img
+                    src={track.icon}
+                    alt={track.title}
+                    className="track-icon-image pixel-crisp"
+                  />
+                </div>
                 <h3 className="track-title">{track.title}</h3>
                 <p className="track-description">{track.description}</p>
               </div>

@@ -48,7 +48,10 @@ const StatsSection = () => {
           {/* Stats Grid */}
           <div className="stats-grid">
             {stats.map((stat, index) => (
-              <div key={index} className="stat-card">
+              <div
+                key={index}
+                className={`stat-card reveal reveal--tile reveal--stagger-${index + 1}`}
+              >
                 <div className="stat-number">{stat.number}</div>
                 <div className="stat-label">{stat.label}</div>
               </div>

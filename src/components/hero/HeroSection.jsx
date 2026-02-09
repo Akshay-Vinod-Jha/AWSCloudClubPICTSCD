@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./HeroSection.css";
+import { addPixelBurst } from "../../utils/pixelBurst";
 
 // Character imports - According to characters_info.txt semantic rules
 // Hero Section uses:
@@ -16,6 +17,14 @@ import locationIcon from "../../assets/images/icons/location_pixel.jpg";
 import heroBackground from "../../assets/images/background/background_1.jpg";
 
 const HeroSection = () => {
+  const ctaBtnRef = useRef(null);
+
+  useEffect(() => {
+    if (ctaBtnRef.current) {
+      return addPixelBurst(ctaBtnRef.current, cloudHelper);
+    }
+  }, []);
+
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -26,7 +35,7 @@ const HeroSection = () => {
             <img
               src={cloudHelper}
               alt="Cloud Helper"
-              className="helper-image pixel-crisp"
+              className="helper-image pixel-crisp pixel-float"
             />
           </div>
 
@@ -61,7 +70,9 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <button className="pixel-button hero-cta">Register Now</button>
+            <button ref={ctaBtnRef} className="pixel-button hero-cta">
+              Register Now
+            </button>
           </div>
 
           {/* Main Builder Character */}

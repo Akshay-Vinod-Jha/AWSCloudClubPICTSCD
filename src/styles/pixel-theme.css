@@ -54,6 +54,58 @@ Flat colors, blocky UI, hard edges only
   box-sizing: border-box;
 }
 
+/* ===== Custom Minecraft Cursors ===== */
+html,
+body {
+  cursor:
+    url("../assets/images/cursors/cursor_default.png") 0 0,
+    auto;
+}
+
+a,
+button,
+.pixel-button,
+[role="button"],
+label,
+select,
+summary,
+[onclick],
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"] {
+  cursor:
+    url("../assets/images/cursors/cursor_pointer.png") 6 0,
+    pointer;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+textarea,
+[contenteditable="true"] {
+  cursor:
+    url("../assets/images/cursors/cursor_text.png") 16 16,
+    text;
+}
+
+[draggable="true"],
+.draggable {
+  cursor:
+    url("../assets/images/cursors/cursor_grab.png") 16 16,
+    grab;
+}
+
+.loading,
+.is-loading,
+[aria-busy="true"] {
+  cursor:
+    url("../assets/images/cursors/cursor_wait.png") 16 16,
+    wait;
+}
+
 body {
   font-family: "Press Start 2P", cursive;
   background-color: var(--pixel-white);
@@ -110,19 +162,23 @@ p {
   cursor: pointer;
   text-transform: uppercase;
   position: relative;
-  transition: none;
+  overflow: visible;
+  transition:
+    transform 100ms steps(2),
+    box-shadow 100ms steps(2),
+    background-color 100ms steps(2);
   box-shadow: 6px 6px 0 var(--pixel-black);
 }
 
 .pixel-button:hover {
   background-color: var(--button-primary-dark);
-  transform: translate(2px, 2px);
-  box-shadow: 4px 4px 0 var(--pixel-black);
+  border-color: var(--pixel-black);
 }
 
 .pixel-button:active {
-  transform: translate(4px, 4px);
-  box-shadow: 2px 2px 0 var(--pixel-black);
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 0 var(--pixel-black);
+  background-color: var(--button-primary-dark);
 }
 
 /* Pixel Border Utility */
@@ -190,4 +246,585 @@ img {
     font-size: 0.75rem;
     padding: 12px 24px;
   }
+}
+
+/*
+========================================
+REVEAL ANIMATION SYSTEM
+========================================
+IntersectionObserver-based reveal animations
+Usage:
+- Add .reveal to any element
+- Add modifier class (.reveal--pixel, .reveal--tile, .reveal--drop)
+- Add .reveal--stagger-{n} for sequential delays
+- Observer adds .is-visible when element enters viewport
+*/
+
+/* Base Reveal Class - Hidden by Default */
+.reveal {
+  opacity: 0;
+}
+
+/* Pixel Reveal - Clip-path horizontal reveal */
+.reveal--pixel {
+  clip-path: inset(0 100% 0 0);
+  opacity: 1;
+}
+
+.reveal--pixel.is-visible {
+  animation: revealPixel 800ms steps(10) forwards;
+}
+
+@keyframes revealPixel {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  10% {
+    clip-path: inset(0 90% 0 0);
+  }
+  20% {
+    clip-path: inset(0 80% 0 0);
+  }
+  30% {
+    clip-path: inset(0 70% 0 0);
+  }
+  40% {
+    clip-path: inset(0 60% 0 0);
+  }
+  50% {
+    clip-path: inset(0 50% 0 0);
+  }
+  60% {
+    clip-path: inset(0 40% 0 0);
+  }
+  70% {
+    clip-path: inset(0 30% 0 0);
+  }
+  80% {
+    clip-path: inset(0 20% 0 0);
+  }
+  90% {
+    clip-path: inset(0 10% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0% 0 0);
+  }
+}
+
+/* Tile Reveal - Block assembly (translateY) */
+.reveal--tile {
+  transform: translateY(8px);
+  opacity: 0;
+}
+
+.reveal--tile.is-visible {
+  animation: revealTile 600ms steps(8) forwards;
+}
+
+@keyframes revealTile {
+  0% {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Drop Reveal - Small drop animation */
+.reveal--drop {
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.reveal--drop.is-visible {
+  animation: revealDrop 400ms steps(6) forwards;
+}
+
+@keyframes revealDrop {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Chunk Load - Minecraft Terrain Loading Style */
+.reveal--chunk {
+  clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
+  opacity: 1;
+}
+
+.reveal--chunk.is-visible {
+  animation: revealChunk 700ms steps(8) forwards;
+}
+
+@keyframes revealChunk {
+  0% {
+    clip-path: polygon(0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%);
+  }
+  12.5% {
+    clip-path: polygon(
+      0% 0%,
+      25% 0%,
+      25% 25%,
+      0% 25%,
+      75% 75%,
+      100% 75%,
+      100% 100%,
+      75% 100%
+    );
+  }
+  25% {
+    clip-path: polygon(
+      0% 0%,
+      50% 0%,
+      50% 25%,
+      0% 25%,
+      50% 50%,
+      100% 50%,
+      100% 100%,
+      50% 100%
+    );
+  }
+  37.5% {
+    clip-path: polygon(
+      0% 0%,
+      75% 0%,
+      75% 50%,
+      0% 50%,
+      25% 50%,
+      100% 50%,
+      100% 100%,
+      25% 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 50%,
+      0% 50%,
+      0% 50%,
+      100% 50%,
+      100% 100%,
+      0% 100%
+    );
+  }
+  62.5% {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 65%,
+      0% 65%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%
+    );
+  }
+  75% {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 80%,
+      0% 80%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%
+    );
+  }
+  87.5% {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 95%,
+      0% 95%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      0% 100%,
+      0% 0%,
+      0% 0%,
+      0% 0%,
+      0% 0%
+    );
+  }
+}
+
+/* Stagger Delays - Sequential Animation */
+.reveal--stagger-1 {
+  animation-delay: 0ms;
+}
+
+.reveal--stagger-2 {
+  animation-delay: 150ms;
+}
+
+.reveal--stagger-3 {
+  animation-delay: 300ms;
+}
+
+.reveal--stagger-4 {
+  animation-delay: 450ms;
+}
+
+.reveal--stagger-5 {
+  animation-delay: 600ms;
+}
+
+.reveal--stagger-6 {
+  animation-delay: 750ms;
+}
+
+/* Simple Fade Reveal (for subtle elements) */
+.reveal--fade {
+  opacity: 0;
+}
+
+.reveal--fade.is-visible {
+  animation: revealFade 400ms steps(4) forwards;
+}
+
+@keyframes revealFade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Slide Reveal - Left to right slide-in */
+.reveal--slide {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+
+.reveal--slide.is-visible {
+  animation: revealSlide 400ms steps(6) forwards;
+}
+
+@keyframes revealSlide {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Slide Up Reveal - Bottom to top slide-in */
+.reveal--slide-up {
+  transform: translateY(30px);
+  opacity: 0;
+}
+
+.reveal--slide-up.is-visible {
+  animation: revealSlideUp 400ms steps(6) forwards;
+}
+
+@keyframes revealSlideUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*
+========================================
+FLOATING IDLE ANIMATION
+========================================
+Subtle vertical floating for small character mobs
+(cloud_helper, cloud_bird)
+*/
+
+.pixel-float {
+  animation: pixelFloat 2s steps(6) infinite;
+}
+
+.pixel-float-delayed {
+  animation: pixelFloat 2.2s steps(6) infinite;
+  animation-delay: 300ms;
+}
+
+@keyframes pixelFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/*
+========================================
+UNLOCK HIGHLIGHT ANIMATION
+========================================
+Single-fire border highlight effect
+Triggers once after card reveal - Level Unlock feel
+Usage: Applied automatically on .track-card and .workshop-card when revealed
+*/
+
+.unlock-highlight {
+  animation: unlockHighlight 300ms steps(5) forwards;
+  animation-delay: 400ms; /* Fires after drop animation completes */
+}
+
+@keyframes unlockHighlight {
+  0% {
+    outline: 0px solid #ffd700;
+    outline-offset: 0px;
+  }
+  25% {
+    outline: 4px solid #ffd700;
+    outline-offset: 2px;
+  }
+  50% {
+    outline: 6px solid #ffcc00;
+    outline-offset: 4px;
+  }
+  75% {
+    outline: 4px solid #ffd700;
+    outline-offset: 2px;
+  }
+  100% {
+    outline: 0px solid #ffd700;
+    outline-offset: 0px;
+  }
+}
+
+/*
+========================================
+PIXEL WIPE TRANSITION
+========================================
+Retro level transition effect for major sections
+Row-by-row reveal with discrete pixel steps
+Usage: Applied to major section containers (AboutSection, TracksSection, WorkshopsSection, SpeakersSection)
+*/
+
+.reveal--wipe {
+  clip-path: inset(100% 0 0 0);
+  opacity: 1 !important;
+}
+
+.reveal--wipe.is-visible {
+  animation: revealWipe 500ms steps(10) forwards;
+  opacity: 1 !important;
+}
+
+@keyframes revealWipe {
+  0% {
+    clip-path: inset(100% 0 0 0);
+    opacity: 1;
+  }
+  10% {
+    clip-path: inset(90% 0 0 0);
+    opacity: 1;
+  }
+  20% {
+    clip-path: inset(80% 0 0 0);
+    opacity: 1;
+  }
+  30% {
+    clip-path: inset(70% 0 0 0);
+    opacity: 1;
+  }
+  40% {
+    clip-path: inset(60% 0 0 0);
+    opacity: 1;
+  }
+  50% {
+    clip-path: inset(50% 0 0 0);
+    opacity: 1;
+  }
+  60% {
+    clip-path: inset(40% 0 0 0);
+    opacity: 1;
+  }
+  70% {
+    clip-path: inset(30% 0 0 0);
+    opacity: 1;
+  }
+  80% {
+    clip-path: inset(20% 0 0 0);
+    opacity: 1;
+  }
+  90% {
+    clip-path: inset(10% 0 0 0);
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+/*
+========================================
+PIXEL BURST MICRO-EFFECT
+========================================
+Tiny particle burst on button click
+Minecraft-style impact feedback
+Usage: Applied to .pixel-button on click interaction
+*/
+
+/* Particle container */
+.pixel-burst-particle {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  z-index: 100;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.pixel-burst-particle img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Particle burst animations - 8 directions */
+@keyframes burstNorth {
+  0% {
+    transform: translate(-50%, -50%) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes burstNorthEast {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(16px, -16px);
+    opacity: 0;
+  }
+}
+
+@keyframes burstEast {
+  0% {
+    transform: translate(-50%, -50%) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translateX(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes burstSouthEast {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(16px, 16px);
+    opacity: 0;
+  }
+}
+
+@keyframes burstSouth {
+  0% {
+    transform: translate(-50%, -50%) translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translateY(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes burstSouthWest {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(-16px, 16px);
+    opacity: 0;
+  }
+}
+
+@keyframes burstWest {
+  0% {
+    transform: translate(-50%, -50%) translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translateX(-20px);
+    opacity: 0;
+  }
+}
+
+@keyframes burstNorthWest {
+  0% {
+    transform: translate(-50%, -50%) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) translate(-16px, -16px);
+    opacity: 0;
+  }
+}
+
+/* Apply animations with steps timing */
+.pixel-burst-particle[data-direction="n"] {
+  animation: burstNorth 250ms steps(4) forwards;
+}
+
+.pixel-burst-particle[data-direction="ne"] {
+  animation: burstNorthEast 250ms steps(4) forwards;
+}
+
+.pixel-burst-particle[data-direction="e"] {
+  animation: burstEast 250ms steps(4) forwards;
+}
+
+.pixel-burst-particle[data-direction="se"] {
+  animation: burstSouthEast 250ms steps(4) forwards;
+}
+
+.pixel-burst-particle[data-direction="s"] {
+  animation: burstSouth 250ms steps(4) forwards;
+}
+
+.pixel-burst-particle[data-direction="sw"] {
+  animation: burstSouthWest 250ms steps(4) forwards;
+}
+
+.pixel-burst-particle[data-direction="w"] {
+  animation: burstWest 250ms steps(4) forwards;
+}
+
+.pixel-burst-particle[data-direction="nw"] {
+  animation: burstNorthWest 250ms steps(4) forwards;
 }

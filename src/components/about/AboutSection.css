@@ -55,7 +55,7 @@ Student learning area / Starting ground
 }
 
 .about-companion {
-  width: 60px;
+  width: 80px;
   height: auto;
   filter: drop-shadow(3px 3px 0 var(--pixel-black));
   animation: bounce 2s ease-in-out infinite;
@@ -136,7 +136,7 @@ Student learning area / Starting ground
 
 .student-explorer-image {
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
   height: auto;
   filter: drop-shadow(8px 8px 0 var(--pixel-black));
 }
