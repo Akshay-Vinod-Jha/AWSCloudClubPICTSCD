@@ -423,3 +423,45 @@ Environment-driven venue showcase
     width: 50px;
   }
 }
+
+/* ========================================
+   VENUE IMAGE SLIDE-IN FROM RIGHT
+   ======================================== */
+
+.venue-group-photo.venue-slide-in-ready {
+  transform: translateX(60px);
+}
+
+.venue-group-photo.venue-slide-in-done {
+  animation: venueSlideInRight 500ms steps(8) forwards;
+}
+
+@keyframes venueSlideInRight {
+  0% {
+    transform: translateX(60px);
+  }
+  12% {
+    transform: translateX(52px);
+  }
+  25% {
+    transform: translateX(42px);
+  }
+  37% {
+    transform: translateX(30px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  62% {
+    transform: translateX(12px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+  87% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

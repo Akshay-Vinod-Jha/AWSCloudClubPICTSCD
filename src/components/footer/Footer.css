@@ -210,3 +210,86 @@ Matches Hero Section aesthetic — clean, elegant, pixel
     margin-top: 25px;
   }
 }
+
+/* ========================================
+   FOOTER SLIDE ANIMATIONS
+   ======================================== */
+
+.footer-slide-hidden-left {
+  visibility: hidden;
+  transform: translateX(-60px);
+}
+
+.footer-slide-hidden-right {
+  visibility: hidden;
+  transform: translateX(60px);
+}
+
+.footer-slide-revealed {
+  visibility: visible;
+  animation: footerSlideIn 500ms steps(8) forwards;
+}
+
+.footer-slide-hidden-left.footer-slide-revealed {
+  animation-name: footerSlideFromLeft;
+}
+
+.footer-slide-hidden-right.footer-slide-revealed {
+  animation-name: footerSlideFromRight;
+}
+
+@keyframes footerSlideFromLeft {
+  0% {
+    visibility: visible;
+    transform: translateX(-60px);
+  }
+  14% {
+    transform: translateX(-48px);
+  }
+  28% {
+    transform: translateX(-36px);
+  }
+  42% {
+    transform: translateX(-24px);
+  }
+  56% {
+    transform: translateX(-14px);
+  }
+  70% {
+    transform: translateX(-6px);
+  }
+  85% {
+    transform: translateX(-2px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes footerSlideFromRight {
+  0% {
+    visibility: visible;
+    transform: translateX(60px);
+  }
+  14% {
+    transform: translateX(48px);
+  }
+  28% {
+    transform: translateX(36px);
+  }
+  42% {
+    transform: translateX(24px);
+  }
+  56% {
+    transform: translateX(14px);
+  }
+  70% {
+    transform: translateX(6px);
+  }
+  85% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

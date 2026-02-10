@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./VenueSection.css";
 
 // Character imports - According to characters_info.txt
@@ -10,8 +10,29 @@ import cloudBird from "../../assets/images/characters/cloud_bird.png";
 import groupPhoto from "../../assets/images/groupphoto.png";
 
 const VenueSection = () => {
+  const sectionRef = useRef(null);
+  const [slid, setSlid] = useState(false);
+
+  useEffect(() => {
+    const sectionEl = sectionRef.current;
+    if (!sectionEl) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSlid(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 },
+    );
+
+    observer.observe(sectionEl);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="venue-section">
+    <section className="venue-section" ref={sectionRef}>
       {/* Decorative Bird - Top Right */}
       <img
         src={cloudBird}
@@ -80,7 +101,9 @@ const VenueSection = () => {
             <img
               src={groupPhoto}
               alt="Group Photo"
-              className="venue-group-photo"
+              className={`venue-group-photo${
+                slid ? " venue-slide-in-done" : " venue-slide-in-ready"
+              }`}
             />
           </div>
         </div>

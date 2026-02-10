@@ -283,3 +283,45 @@ Sky blue background, gold CTA emphasis
     height: 18px;
   }
 }
+
+/* ========================================
+   YELLOW BLOCK DROP ANIMATION
+   ======================================== */
+
+.reg-block-hidden {
+  visibility: hidden;
+  transform: translateY(-40px);
+}
+
+.reg-block-drop {
+  visibility: visible;
+  animation: regBlockFall 400ms steps(6) forwards;
+}
+
+@keyframes regBlockFall {
+  0% {
+    transform: translateY(-40px);
+    visibility: visible;
+  }
+  16% {
+    transform: translateY(-32px);
+  }
+  33% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  66% {
+    transform: translateY(-4px);
+  }
+  83% {
+    transform: translateY(0px);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

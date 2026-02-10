@@ -346,3 +346,29 @@ Light Grass Green background, dirt brown step cards
     font-size: 0.5rem;
   }
 }
+
+/* ========================================
+   QUEST PROGRESSION REVEAL ANIMATION
+   ======================================== */
+
+.quest-hidden {
+  visibility: hidden;
+  transform: translateY(-8px);
+}
+
+.quest-revealed {
+  visibility: visible;
+  transform: translateY(0px);
+  animation: questRevealSnap 150ms steps(2) forwards;
+}
+
+@keyframes questRevealSnap {
+  0% {
+    visibility: visible;
+    transform: translateY(-8px);
+  }
+  100% {
+    visibility: visible;
+    transform: translateY(0px);
+  }
+}

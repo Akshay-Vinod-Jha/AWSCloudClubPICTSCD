@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./SponsorsSection.css";
 
 // Character imports - According to characters_info.txt
@@ -7,9 +7,45 @@ import "./SponsorsSection.css";
 // - cloud_bird.png: Decorative life element
 import cloudHelper from "../../assets/images/characters/cloud_helper.png";
 import cloudBird from "../../assets/images/characters/cloud_bird.png";
+import cloudBuilder from "../../assets/images/characters/cloud_builder.png";
+import cloudSleep from "../../assets/images/characters/cloud_sleep.png";
 import toBeAnnounced from "../../assets/images/tobeannounced.jpg";
+import { triggerLandingBurst } from "../../utils/landingBurst";
 
 const SponsorsSection = () => {
+  const sectionRef = useRef(null);
+  const imgRef = useRef(null);
+  const [dropped, setDropped] = useState(false);
+
+  useEffect(() => {
+    const sectionEl = sectionRef.current;
+    if (!sectionEl) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setDropped(true);
+          // Fire cloud burst after drop (700ms) + vibrate (300ms)
+          setTimeout(() => {
+            if (imgRef.current) {
+              triggerLandingBurst(imgRef.current, [
+                cloudHelper,
+                cloudBird,
+                cloudBuilder,
+                cloudSleep,
+              ]);
+            }
+          }, 1000);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 },
+    );
+
+    observer.observe(sectionEl);
+    return () => observer.disconnect();
+  }, []);
+
   const sponsorTiers = [
     {
       tier: "Platinum Sponsors",
@@ -46,7 +82,7 @@ const SponsorsSection = () => {
   ];
 
   return (
-    <section className="sponsors-section">
+    <section className="sponsors-section" ref={sectionRef}>
       {/* Decorative Helper - Top Left */}
       <img
         src={cloudHelper}
@@ -71,9 +107,12 @@ const SponsorsSection = () => {
         {/* Sponsors - To Be Announced */}
         <div className="sponsors-tba-container">
           <img
+            ref={imgRef}
             src={toBeAnnounced}
             alt="Sponsors to be announced"
-            className="sponsors-tba-image pixel-crisp"
+            className={`sponsors-tba-image pixel-crisp${
+              dropped ? " pixel-drop-landed" : " pixel-drop-ready"
+            }`}
           />
         </div>
 

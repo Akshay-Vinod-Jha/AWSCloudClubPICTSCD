@@ -1,13 +1,44 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import "./Footer.css";
 
 const Footer = () => {
+  const footerRef = useRef(null);
+  const stepsRef = useRef([]);
+
+  const assignRef = (el) => {
+    if (el && !stepsRef.current.includes(el)) {
+      stepsRef.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    const footerEl = footerRef.current;
+    if (!footerEl) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          stepsRef.current.forEach((el, i) => {
+            setTimeout(() => {
+              el.classList.add("footer-slide-revealed");
+            }, i * 200);
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 },
+    );
+
+    observer.observe(footerEl);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <footer className="footer">
+    <footer className="footer" ref={footerRef}>
       {/* Footer Card — matches Hero style */}
       <div className="footer-card">
         {/* Event Info */}
-        <div className="footer-block">
+        <div ref={assignRef} className="footer-block footer-slide-hidden-left">
           <h4 className="footer-block-title">Event Info</h4>
           <p className="footer-event-name">Student Community Day</p>
           <p className="footer-event-desc">
@@ -17,7 +48,7 @@ const Footer = () => {
         </div>
 
         {/* Quick Links */}
-        <div className="footer-block">
+        <div ref={assignRef} className="footer-block footer-slide-hidden-right">
           <h4 className="footer-block-title">Quick Links</h4>
           <ul className="footer-links-list">
             <li>
@@ -36,7 +67,7 @@ const Footer = () => {
         </div>
 
         {/* Community */}
-        <div className="footer-block">
+        <div ref={assignRef} className="footer-block footer-slide-hidden-left">
           <h4 className="footer-block-title">Community</h4>
           <p className="footer-community-name">AWS Cloud Club — PICT</p>
           <p className="footer-college-name">
@@ -46,7 +77,10 @@ const Footer = () => {
       </div>
 
       {/* Copyright */}
-      <div className="footer-copyright-bar">
+      <div
+        ref={assignRef}
+        className="footer-copyright-bar footer-slide-hidden-right"
+      >
         <p className="footer-copyright-text">
           © 2025 Student Community Day — All rights reserved.
         </p>

@@ -1,15 +1,57 @@
-import React from "react";
+import React, { useEffect, useRef, useCallback } from "react";
 import "./RegistrationSection.css";
+import { addPixelBurst } from "../../utils/pixelBurst";
 
 // Character imports
 import scdMascot from "../../assets/images/characters/scd_event_mascot.png";
 import cloudBuilder from "../../assets/images/characters/cloud_builder.png";
+import cloudHelper from "../../assets/images/characters/cloud_helper.png";
 
 // Background image (applied via CSS — pixel_final_cta_bg.jpg)
 
 const RegistrationSection = () => {
+  const ctaBtnRef = useRef(null);
+  const sectionRef = useRef(null);
+  const blocksRef = useRef([]);
+
+  const assignBlockRef = (el) => {
+    if (el && !blocksRef.current.includes(el)) {
+      blocksRef.current.push(el);
+    }
+  };
+
+  useEffect(() => {
+    if (ctaBtnRef.current) {
+      return addPixelBurst(ctaBtnRef.current, cloudHelper);
+    }
+  }, []);
+
+  useEffect(() => {
+    const sectionEl = sectionRef.current;
+    if (!sectionEl) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          blocksRef.current.forEach((block) => {
+            const delay = Math.floor(Math.random() * 800);
+            setTimeout(() => {
+              block.classList.remove("reg-block-hidden");
+              block.classList.add("reg-block-drop");
+            }, delay);
+          });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 },
+    );
+
+    observer.observe(sectionEl);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="registration-section">
+    <section className="registration-section" ref={sectionRef}>
       {/* Cloud Builder Character - Left Side */}
       <img
         src={cloudBuilder}
@@ -52,7 +94,11 @@ const RegistrationSection = () => {
 
           {/* CTA Button */}
           <div className="registration-cta-wrapper">
-            <button className="registration-cta-button" type="button">
+            <button
+              ref={ctaBtnRef}
+              className="registration-cta-button"
+              type="button"
+            >
               Register Now
             </button>
           </div>
@@ -69,14 +115,38 @@ const RegistrationSection = () => {
         {/* Bottom Pixel Panel */}
         <div className="registration-bottom-panel">
           <div className="registration-block-row">
-            <div className="registration-block"></div>
-            <div className="registration-block"></div>
-            <div className="registration-block"></div>
-            <div className="registration-block"></div>
-            <div className="registration-block"></div>
-            <div className="registration-block"></div>
-            <div className="registration-block"></div>
-            <div className="registration-block"></div>
+            <div
+              ref={assignBlockRef}
+              className="registration-block reg-block-hidden"
+            ></div>
+            <div
+              ref={assignBlockRef}
+              className="registration-block reg-block-hidden"
+            ></div>
+            <div
+              ref={assignBlockRef}
+              className="registration-block reg-block-hidden"
+            ></div>
+            <div
+              ref={assignBlockRef}
+              className="registration-block reg-block-hidden"
+            ></div>
+            <div
+              ref={assignBlockRef}
+              className="registration-block reg-block-hidden"
+            ></div>
+            <div
+              ref={assignBlockRef}
+              className="registration-block reg-block-hidden"
+            ></div>
+            <div
+              ref={assignBlockRef}
+              className="registration-block reg-block-hidden"
+            ></div>
+            <div
+              ref={assignBlockRef}
+              className="registration-block reg-block-hidden"
+            ></div>
           </div>
         </div>
       </div>

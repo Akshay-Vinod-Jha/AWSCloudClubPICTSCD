@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useCallback } from "react";
 import "./CommunityJourneySection.css";
 
 // Character imports
@@ -32,8 +32,51 @@ const journeySteps = [
 ];
 
 const CommunityJourneySection = () => {
+  const sectionRef = useRef(null);
+  const stepsRef = useRef([]);
+
+  // Total 7 elements: box0, conn0, box1, conn1, box2, conn2, box3
+  const STEP_DELAY = 200; // ms between each reveal
+
+  const runSequence = useCallback(() => {
+    const els = stepsRef.current;
+    els.forEach((el, i) => {
+      if (!el) return;
+      setTimeout(() => {
+        el.classList.remove("quest-hidden");
+        el.classList.add("quest-revealed");
+      }, i * STEP_DELAY);
+    });
+  }, []);
+
+  useEffect(() => {
+    const sectionEl = sectionRef.current;
+    if (!sectionEl) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          runSequence();
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 },
+    );
+
+    observer.observe(sectionEl);
+    return () => observer.disconnect();
+  }, [runSequence]);
+
+  // Collect refs for the 7 sequential elements
+  let stepIndex = 0;
+  const assignRef = (el) => {
+    if (el && !stepsRef.current.includes(el)) {
+      stepsRef.current.push(el);
+    }
+  };
+
   return (
-    <section className="journey-section">
+    <section className="journey-section" ref={sectionRef}>
       {/* Journey Path Background — CSS pattern fallback */}
       <div className="journey-path-bg"></div>
 
@@ -56,7 +99,7 @@ const CommunityJourneySection = () => {
           {journeySteps.map((step, index) => (
             <React.Fragment key={step.number}>
               {/* Step Card */}
-              <div className="journey-step-card">
+              <div ref={assignRef} className="journey-step-card quest-hidden">
                 <div className="journey-step-number-badge">
                   <span className="journey-step-number">LV.{step.number}</span>
                 </div>
@@ -72,7 +115,7 @@ const CommunityJourneySection = () => {
 
               {/* Connector Block (between steps) */}
               {index < journeySteps.length - 1 && (
-                <div className="journey-connector">
+                <div ref={assignRef} className="journey-connector quest-hidden">
                   <div className="journey-connector-block"></div>
                   <div className="journey-connector-block"></div>
                   <div className="journey-connector-block"></div>

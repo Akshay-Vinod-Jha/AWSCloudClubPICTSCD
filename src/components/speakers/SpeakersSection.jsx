@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "./SpeakersSection.css";
 
 // Character imports - According to characters_info.txt
@@ -7,9 +7,45 @@ import "./SpeakersSection.css";
 // - cloud_sleep.png: Decorative life element (subtle)
 import cloudHelper from "../../assets/images/characters/cloud_helper.png";
 import cloudSleep from "../../assets/images/characters/cloud_sleep.png";
+import cloudBird from "../../assets/images/characters/cloud_bird.png";
+import cloudBuilder from "../../assets/images/characters/cloud_builder.png";
 import toBeAnnounced from "../../assets/images/tobeannounced.jpg";
+import { triggerLandingBurst } from "../../utils/landingBurst";
 
 const SpeakersSection = () => {
+  const sectionRef = useRef(null);
+  const imgRef = useRef(null);
+  const [dropped, setDropped] = useState(false);
+
+  useEffect(() => {
+    const sectionEl = sectionRef.current;
+    if (!sectionEl) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setDropped(true);
+          // Fire cloud burst after drop (700ms) + vibrate (300ms)
+          setTimeout(() => {
+            if (imgRef.current) {
+              triggerLandingBurst(imgRef.current, [
+                cloudHelper,
+                cloudSleep,
+                cloudBird,
+                cloudBuilder,
+              ]);
+            }
+          }, 1000);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.4 },
+    );
+
+    observer.observe(sectionEl);
+    return () => observer.disconnect();
+  }, []);
+
   const speakers = [
     {
       name: "Dr. Alex Chen",
@@ -44,7 +80,7 @@ const SpeakersSection = () => {
   ];
 
   return (
-    <section className="speakers-section">
+    <section className="speakers-section" ref={sectionRef}>
       {/* Decorative Helper - Top Left */}
       <img
         src={cloudHelper}
@@ -69,9 +105,12 @@ const SpeakersSection = () => {
         {/* Speakers - To Be Announced */}
         <div className="speakers-tba-container">
           <img
+            ref={imgRef}
             src={toBeAnnounced}
             alt="Speakers to be announced"
-            className="speakers-tba-image pixel-crisp"
+            className={`speakers-tba-image pixel-crisp${
+              dropped ? " pixel-drop-landed" : " pixel-drop-ready"
+            }`}
           />
         </div>
 
