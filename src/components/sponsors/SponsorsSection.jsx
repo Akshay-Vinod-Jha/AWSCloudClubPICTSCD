@@ -7,6 +7,7 @@ import "./SponsorsSection.css";
 // - cloud_bird.png: Decorative life element
 import cloudHelper from "../../assets/images/characters/cloud_helper.png";
 import cloudBird from "../../assets/images/characters/cloud_bird.png";
+import toBeAnnounced from "../../assets/images/tobeannounced.jpg";
 
 const SponsorsSection = () => {
   const sponsorTiers = [
@@ -67,7 +68,16 @@ const SponsorsSection = () => {
           <p className="sponsors-subtitle">Built with Community Support</p>
         </div>
 
-        {/* Sponsor Tiers */}
+        {/* Sponsors - To Be Announced */}
+        <div className="sponsors-tba-container">
+          <img
+            src={toBeAnnounced}
+            alt="Sponsors to be announced"
+            className="sponsors-tba-image pixel-crisp"
+          />
+        </div>
+
+        {/* Original sponsor tiers - hidden for now
         <div className="sponsors-tiers">
           {sponsorTiers.map((tierData, index) => (
             <div
@@ -75,15 +85,12 @@ const SponsorsSection = () => {
               className="sponsor-tier-block reveal reveal--tile"
               style={{ animationDelay: `${index * 150}ms` }}
             >
-              {/* Tier Header */}
               <div
                 className="tier-header"
                 style={{ borderLeftColor: tierData.tierColor }}
               >
                 <h3 className="tier-title">{tierData.tier}</h3>
               </div>
-
-              {/* Sponsor Logo Grid */}
               <div className="sponsor-logos-grid">
                 {tierData.sponsors.map((sponsor, sponsorIndex) => (
                   <div key={sponsorIndex} className="sponsor-logo-placeholder">
@@ -96,6 +103,7 @@ const SponsorsSection = () => {
             </div>
           ))}
         </div>
+        */}
 
         {/* Support Message */}
         <div className="sponsors-footer-message">

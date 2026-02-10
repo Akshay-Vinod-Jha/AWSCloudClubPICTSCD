@@ -307,3 +307,18 @@ Sponsor showcase / Guild board style
     width: 45px;
   }
 }
+
+/* To Be Announced */
+.sponsors-tba-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.sponsors-tba-image {
+  max-width: 900px;
+  width: 80%;
+  height: auto;
+}

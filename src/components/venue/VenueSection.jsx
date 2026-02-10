@@ -7,6 +7,7 @@ import "./VenueSection.css";
 // - cloud_bird.png: Environment life element for depth
 import cloudExplorer from "../../assets/images/characters/cloud_explorer.png";
 import cloudBird from "../../assets/images/characters/cloud_bird.png";
+import groupPhoto from "../../assets/images/groupphoto.png";
 
 const VenueSection = () => {
   return (
@@ -26,14 +27,6 @@ const VenueSection = () => {
 
         <div className="venue-content">
           <div className="venue-info-column">
-            <div className="venue-explorer-container">
-              <img
-                src={cloudExplorer}
-                alt="Explorer"
-                className="venue-explorer pixel-crisp"
-              />
-            </div>
-
             <div className="venue-info-card reveal reveal--tile">
               <div className="venue-card-header">
                 <h3 className="venue-card-title">Location Details</h3>
@@ -83,31 +76,12 @@ const VenueSection = () => {
             </div>
           </div>
 
-          <div className="venue-environment-column">
-            <div
-              className="venue-map-frame reveal reveal--fade"
-              style={{ animationDelay: "200ms" }}
-            >
-              <div className="venue-map-placeholder">
-                <div className="map-icon-container">
-                  <div className="map-pin">
-                    <div className="map-pin-top"></div>
-                    <div className="map-pin-bottom"></div>
-                  </div>
-                  <p className="map-label">Campus Location</p>
-                </div>
-
-                <div className="ground-layers">
-                  <div className="ground-layer grass-layer"></div>
-                  <div className="ground-layer dirt-layer"></div>
-                  <div className="ground-layer stone-layer"></div>
-                </div>
-              </div>
-
-              <div className="map-caption">
-                <p>▶ Interactive Map Coming Soon</p>
-              </div>
-            </div>
+          <div className="venue-house-column">
+            <img
+              src={groupPhoto}
+              alt="Group Photo"
+              className="venue-group-photo"
+            />
           </div>
         </div>
       </div>

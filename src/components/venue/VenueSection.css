@@ -86,11 +86,27 @@ Environment-driven venue showcase
 .venue-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 40px;
   align-items: start;
 }
 
-/* Left Column: Venue Info */
+/* Left Column: House 360 */
+.venue-house-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Group Photo */
+.venue-group-photo {
+  width: 100%;
+  height: auto;
+  border: 6px solid var(--pixel-black);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.7);
+  object-fit: cover;
+}
+
+/* Right Column: Venue Info */
 .venue-info-column {
   display: flex;
   flex-direction: column;
@@ -329,7 +345,7 @@ Environment-driven venue showcase
 @media (max-width: 968px) {
   .venue-content {
     grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 40px;
   }
 
   .venue-explorer {

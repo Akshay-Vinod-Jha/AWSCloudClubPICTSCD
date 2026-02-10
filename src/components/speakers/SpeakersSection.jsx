@@ -7,6 +7,7 @@ import "./SpeakersSection.css";
 // - cloud_sleep.png: Decorative life element (subtle)
 import cloudHelper from "../../assets/images/characters/cloud_helper.png";
 import cloudSleep from "../../assets/images/characters/cloud_sleep.png";
+import toBeAnnounced from "../../assets/images/tobeannounced.jpg";
 
 const SpeakersSection = () => {
   const speakers = [
@@ -65,7 +66,16 @@ const SpeakersSection = () => {
           <p className="speakers-subtitle">Learn from the Best</p>
         </div>
 
-        {/* Speakers Grid */}
+        {/* Speakers - To Be Announced */}
+        <div className="speakers-tba-container">
+          <img
+            src={toBeAnnounced}
+            alt="Speakers to be announced"
+            className="speakers-tba-image pixel-crisp"
+          />
+        </div>
+
+        {/* Original speakers grid - hidden for now
         <div className="speakers-grid">
           {speakers.map((speaker, index) => (
             <div
@@ -73,14 +83,11 @@ const SpeakersSection = () => {
               className="speaker-card reveal reveal--slide-up"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Pixel Frame Photo Placeholder */}
               <div className="speaker-photo-frame">
                 <div className="speaker-photo-placeholder">
                   <span className="photo-icon">👤</span>
                 </div>
               </div>
-
-              {/* Speaker Info */}
               <div className="speaker-info">
                 <h3 className="speaker-name">{speaker.name}</h3>
                 <p className="speaker-role">{speaker.role}</p>
@@ -89,6 +96,7 @@ const SpeakersSection = () => {
             </div>
           ))}
         </div>
+        */}
       </div>
     </section>
   );

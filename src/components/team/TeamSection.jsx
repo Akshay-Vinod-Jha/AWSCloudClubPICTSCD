@@ -1,15 +1,13 @@
 import React from "react";
 import "./TeamSection.css";
 
-// Pixel avatar imports — generate via Nano Banana and place in:
-// assets/images/team/avatar_01.png through avatar_06.png
-// Uncomment imports once images are placed.
-// import avatar01 from "../../assets/images/team/avatar_01.png";
-// import avatar02 from "../../assets/images/team/avatar_02.png";
-// import avatar03 from "../../assets/images/team/avatar_03.png";
-// import avatar04 from "../../assets/images/team/avatar_04.png";
-// import avatar05 from "../../assets/images/team/avatar_05.png";
-// import avatar06 from "../../assets/images/team/avatar_06.png";
+// Pixel avatar imports
+import avatar01 from "../../assets/images/team/avatar_01.jpg";
+import avatar02 from "../../assets/images/team/avatar_02.jpg";
+import avatar03 from "../../assets/images/team/avatar_03.jpg";
+import avatar04 from "../../assets/images/team/avatar_04.jpg";
+import avatar05 from "../../assets/images/team/avatar_05.jpg";
+import avatar06 from "../../assets/images/team/avatar_06.jpg";
 
 const teamMembers = [
   {
@@ -17,7 +15,7 @@ const teamMembers = [
     name: "Alex Storm",
     role: "Lead",
     club: "SCD AWS PICT",
-    avatarLabel: "A",
+    avatar: avatar01,
     badgeColor: "#4CAF50",
   },
   {
@@ -25,7 +23,7 @@ const teamMembers = [
     name: "Priya Verma",
     role: "Co-Lead",
     club: "SCD AWS PICT",
-    avatarLabel: "P",
+    avatar: avatar02,
     badgeColor: "#4CAF50",
   },
   {
@@ -33,7 +31,7 @@ const teamMembers = [
     name: "Sam Chen",
     role: "Organizer",
     club: "Cloud Guild",
-    avatarLabel: "S",
+    avatar: avatar03,
     badgeColor: "#47A3FF",
   },
   {
@@ -41,7 +39,7 @@ const teamMembers = [
     name: "Riya Patil",
     role: "Organizer",
     club: "Cloud Guild",
-    avatarLabel: "R",
+    avatar: avatar04,
     badgeColor: "#47A3FF",
   },
   {
@@ -49,7 +47,7 @@ const teamMembers = [
     name: "Jordan Lee",
     role: "Contributor",
     club: "Dev Collective",
-    avatarLabel: "J",
+    avatar: avatar05,
     badgeColor: "#47A3FF",
   },
   {
@@ -57,7 +55,7 @@ const teamMembers = [
     name: "Neha Kapoor",
     role: "Contributor",
     club: "Dev Collective",
-    avatarLabel: "N",
+    avatar: avatar06,
     badgeColor: "#47A3FF",
   },
 ];
@@ -78,18 +76,11 @@ const TeamSection = () => {
             <div key={member.id} className="team-card">
               {/* Avatar Frame */}
               <div className="team-avatar-frame">
-                <div className="team-avatar-placeholder">
-                  <span className="team-avatar-letter">
-                    {member.avatarLabel}
-                  </span>
-                </div>
-                {/* Once avatars are generated, replace the placeholder above with:
                 <img
-                  src={avatarXX}
+                  src={member.avatar}
                   alt={member.name}
                   className="team-avatar-img pixel-crisp"
                 />
-                */}
               </div>
 
               {/* Member Info */}

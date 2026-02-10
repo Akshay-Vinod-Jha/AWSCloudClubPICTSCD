@@ -1,0 +1,285 @@
+/*
+========================================
+REGISTRATION SECTION - FINAL QUEST / CTA SCREEN
+========================================
+Final call-to-action / mission complete style
+Sky blue background, gold CTA emphasis
+*/
+
+/* ===== Section Container ===== */
+.registration-section {
+  width: 100%;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(71, 163, 255, 0.7) 0%,
+      rgba(37, 99, 235, 0.55) 100%
+    ),
+    url("../../assets/images/background/pixel_final_cta_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-top: 4px solid #2563eb;
+  border-bottom: 4px solid var(--pixel-black);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+/* ===== Cloud Builder Character - Left ===== */
+.registration-builder {
+  position: absolute;
+  left: 40px;
+  bottom: 80px;
+  width: 140px;
+  height: auto;
+  filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.4));
+  z-index: 5;
+}
+
+/* ===== Main Container ===== */
+.registration-container {
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Top Pixel Panel ===== */
+.registration-top-panel {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 6px solid var(--pixel-black);
+  padding: 14px 24px;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
+}
+
+.registration-panel-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.registration-panel-star {
+  font-size: 1.2rem;
+  color: #ffd93d;
+  text-shadow: 2px 2px 0 var(--pixel-black);
+}
+
+.registration-panel-label {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.8rem;
+  color: #ffd93d;
+  text-shadow: 2px 2px 0 var(--pixel-black);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* ===== Main Content Panel ===== */
+.registration-main-panel {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-left: 6px solid var(--pixel-black);
+  border-right: 6px solid var(--pixel-black);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+  box-shadow:
+    inset 0 -6px 0 rgba(0, 0, 0, 0.2),
+    inset 0 6px 0 rgba(100, 160, 255, 0.2);
+}
+
+/* ===== Mascot ===== */
+.registration-mascot-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.registration-mascot {
+  width: 100px;
+  height: auto;
+  filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.4));
+}
+
+/* ===== Title ===== */
+.registration-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.6rem;
+  color: #f5f5f5;
+  text-shadow:
+    4px 4px 0 var(--pixel-black),
+    -1px -1px 0 var(--pixel-black),
+    1px -1px 0 var(--pixel-black),
+    -1px 1px 0 var(--pixel-black);
+  text-transform: uppercase;
+  line-height: 1.6;
+  max-width: 700px;
+}
+
+/* ===== Subtext ===== */
+.registration-subtext {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.6rem;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 0 var(--pixel-black);
+  line-height: 2;
+  max-width: 600px;
+  opacity: 0.9;
+}
+
+/* ===== CTA Button ===== */
+.registration-cta-wrapper {
+  padding: 8px 0;
+}
+
+.registration-cta-button {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1.1rem;
+  padding: 22px 52px;
+  background-color: #ffd93d;
+  color: var(--pixel-black);
+  border: 6px solid var(--pixel-black);
+  box-shadow: 8px 8px 0 var(--pixel-black);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* ===== Notice ===== */
+.registration-notice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border: 4px solid var(--pixel-black);
+  padding: 10px 20px;
+}
+
+.registration-notice-icon {
+  font-size: 0.9rem;
+  color: #ffd93d;
+  text-shadow: 1px 1px 0 var(--pixel-black);
+}
+
+.registration-notice-text {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.5rem;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 var(--pixel-black);
+  text-transform: uppercase;
+}
+
+/* ===== Bottom Pixel Panel ===== */
+.registration-bottom-panel {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 6px solid var(--pixel-black);
+  padding: 12px 16px;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.6);
+  margin-top: 0;
+}
+
+.registration-block-row {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.registration-block {
+  width: 24px;
+  height: 24px;
+  background-color: #ffd93d;
+  border: 3px solid var(--pixel-black);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Responsive - Tablet ===== */
+@media (max-width: 1024px) {
+  .registration-builder {
+    left: 20px;
+    bottom: 40px;
+    width: 100px;
+  }
+
+  .registration-title {
+    font-size: 1.3rem;
+  }
+
+  .registration-cta-button {
+    font-size: 1rem;
+    padding: 18px 40px;
+  }
+}
+
+/* ===== Responsive - Mobile ===== */
+@media (max-width: 768px) {
+  .registration-section {
+    padding: 60px 16px;
+  }
+
+  .registration-builder {
+    position: static;
+    width: 90px;
+    margin-bottom: 16px;
+    align-self: center;
+  }
+
+  .registration-section {
+    flex-direction: column;
+  }
+
+  .registration-title {
+    font-size: 1rem;
+  }
+
+  .registration-main-panel {
+    padding: 32px 20px;
+    gap: 22px;
+  }
+
+  .registration-cta-button {
+    font-size: 0.85rem;
+    padding: 16px 32px;
+    box-shadow: 6px 6px 0 var(--pixel-black);
+  }
+
+  .registration-mascot {
+    width: 75px;
+  }
+}
+
+/* ===== Responsive - Small Mobile ===== */
+@media (max-width: 480px) {
+  .registration-title {
+    font-size: 0.85rem;
+  }
+
+  .registration-subtext {
+    font-size: 0.5rem;
+  }
+
+  .registration-cta-button {
+    font-size: 0.75rem;
+    padding: 14px 24px;
+  }
+
+  .registration-block {
+    width: 18px;
+    height: 18px;
+  }
+}

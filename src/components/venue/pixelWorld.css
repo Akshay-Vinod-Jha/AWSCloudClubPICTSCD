@@ -1,0 +1,458 @@
+/*
+========================================
+PIXEL WORLD - INTERACTIVE MINECRAFT VIEWPORT
+========================================
+Draggable pixel world with house, trees, terrain
+*/
+
+/* ===== Viewport ===== */
+.pw-viewport {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+  border: 6px solid var(--pixel-black);
+  background-color: #87ceeb;
+  cursor: grab;
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+  box-shadow:
+    inset 0 0 0 4px #654321,
+    8px 8px 0 rgba(0, 0, 0, 0.6);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pw-viewport:active {
+  cursor: grabbing;
+}
+
+/* ===== World Container ===== */
+.pw-world {
+  width: 2000px;
+  height: 1200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+
+/* ===== SKY ===== */
+.pw-sky {
+  width: 100%;
+  height: 700px;
+  background-color: #87ceeb;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Sun */
+.pw-sun {
+  position: absolute;
+  top: 60px;
+  right: 200px;
+  width: 80px;
+  height: 80px;
+  background-color: #ffd93d;
+  border: 4px solid #e6c235;
+  box-shadow:
+    0 0 0 8px rgba(255, 217, 61, 0.3),
+    4px 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* Clouds */
+.pw-cloud {
+  position: absolute;
+  display: flex;
+  gap: 0;
+}
+
+.pw-cloud-block {
+  width: 48px;
+  height: 32px;
+  background-color: #f5f5f5;
+  border: 3px solid #ddd;
+}
+
+.pw-cloud-top {
+  margin-top: -24px;
+}
+
+.pw-cloud-1 {
+  top: 80px;
+  left: 150px;
+}
+
+.pw-cloud-2 {
+  top: 140px;
+  left: 800px;
+}
+
+.pw-cloud-3 {
+  top: 60px;
+  left: 1400px;
+}
+
+/* ===== TERRAIN ===== */
+.pw-terrain {
+  position: absolute;
+  top: 500px;
+  left: 0;
+  width: 100%;
+  height: 400px;
+}
+
+/* ===== TREES ===== */
+.pw-tree {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.pw-leaves {
+  width: 80px;
+  height: 40px;
+  background-color: #2d8b2d;
+  border: 4px solid #1a6b1a;
+}
+
+.pw-leaves-top {
+  width: 56px;
+  height: 32px;
+  background-color: #3da33d;
+  border: 4px solid #2d8b2d;
+  margin-bottom: -4px;
+}
+
+.pw-trunk {
+  width: 24px;
+  height: 48px;
+  background-color: #6b3a1f;
+  border: 4px solid #4a2810;
+}
+
+/* Tree Positions */
+.pw-tree-1 {
+  left: 100px;
+  top: -60px;
+}
+.pw-tree-2 {
+  left: 260px;
+  top: -80px;
+}
+.pw-tree-3 {
+  left: 440px;
+  top: -50px;
+}
+.pw-tree-4 {
+  left: 1300px;
+  top: -70px;
+}
+.pw-tree-5 {
+  left: 1480px;
+  top: -55px;
+}
+.pw-tree-6 {
+  left: 1650px;
+  top: -85px;
+}
+.pw-tree-7 {
+  left: 1820px;
+  top: -45px;
+}
+
+/* ===== HOUSE (Focal Point) ===== */
+.pw-house {
+  position: absolute;
+  left: 750px;
+  top: -220px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Roof */
+.pw-roof {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pw-roof-peak {
+  width: 120px;
+  height: 32px;
+  background-color: #8b2500;
+  border: 4px solid #5c1a00;
+}
+
+.pw-roof-mid {
+  width: 240px;
+  height: 32px;
+  background-color: #a02e00;
+  border: 4px solid #5c1a00;
+  margin-top: -4px;
+}
+
+.pw-roof-base {
+  width: 320px;
+  height: 28px;
+  background-color: #b33600;
+  border: 4px solid #5c1a00;
+  margin-top: -4px;
+}
+
+/* Walls */
+.pw-walls {
+  width: 280px;
+  height: 160px;
+  background-color: #c4903a;
+  border: 4px solid #8b6914;
+  position: relative;
+  box-shadow:
+    inset 0 0 0 4px rgba(0, 0, 0, 0.1),
+    inset -8px 0 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Door */
+.pw-door {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 80px;
+  background-color: #6b3a1f;
+  border: 4px solid #4a2810;
+}
+
+.pw-door-knob {
+  position: absolute;
+  top: 36px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: #ffd93d;
+  border: 2px solid #b39700;
+}
+
+/* Windows */
+.pw-window {
+  position: absolute;
+  top: 28px;
+  width: 48px;
+  height: 48px;
+  background-color: #87ceeb;
+  border: 4px solid #4a2810;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+}
+
+.pw-window-left {
+  left: 28px;
+}
+
+.pw-window-right {
+  right: 28px;
+}
+
+.pw-window-pane {
+  background-color: #a8dce8;
+  border: 2px solid #6bafcc;
+}
+
+/* Chimney */
+.pw-chimney {
+  position: absolute;
+  top: -40px;
+  right: 40px;
+  width: 32px;
+  height: 48px;
+  background-color: #808080;
+  border: 4px solid #4a4a4a;
+}
+
+/* Foundation */
+.pw-foundation {
+  width: 296px;
+  height: 20px;
+  background-color: #808080;
+  border: 4px solid #4a4a4a;
+}
+
+/* ===== PATH ===== */
+.pw-path {
+  position: absolute;
+  bottom: 0;
+  left: 820px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.pw-path-block {
+  width: 56px;
+  height: 16px;
+  background-color: #c4903a;
+  border: 3px solid #8b6914;
+  margin-bottom: -3px;
+}
+
+/* ===== FENCE ===== */
+.pw-fence {
+  position: absolute;
+  bottom: 16px;
+  left: 580px;
+  display: flex;
+  align-items: flex-end;
+  z-index: 2;
+}
+
+.pw-fence-post {
+  width: 12px;
+  height: 48px;
+  background-color: #8b6914;
+  border: 3px solid #5c4a0e;
+}
+
+.pw-fence-rail {
+  width: 48px;
+  height: 8px;
+  background-color: #a07d1a;
+  border: 2px solid #5c4a0e;
+  margin-bottom: 16px;
+}
+
+/* ===== BUSHES & FLOWERS ===== */
+.pw-bush {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  background-color: #2d8b2d;
+  border: 4px solid #1a6b1a;
+  z-index: 2;
+}
+
+.pw-bush-1 {
+  left: 200px;
+  bottom: 8px;
+}
+.pw-bush-2 {
+  left: 1150px;
+  bottom: 12px;
+}
+.pw-bush-3 {
+  left: 1600px;
+  bottom: 8px;
+}
+
+.pw-flower {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #ff6b6b;
+  border: 3px solid #cc4444;
+  z-index: 2;
+}
+
+.pw-flower-1 {
+  left: 350px;
+  bottom: 12px;
+}
+.pw-flower-2 {
+  left: 1050px;
+  bottom: 16px;
+}
+.pw-flower-3 {
+  left: 1750px;
+  bottom: 12px;
+  background-color: #ffd93d;
+  border-color: #ccad00;
+}
+
+/* ===== GROUND LAYERS ===== */
+.pw-ground {
+  position: absolute;
+  top: 900px;
+  left: 0;
+  width: 100%;
+  height: 300px;
+}
+
+.pw-grass-layer {
+  width: 100%;
+  height: 48px;
+  background-color: #4caf50;
+  border-top: 4px solid #2d8b2d;
+  box-shadow: inset 0 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.pw-dirt-layer {
+  width: 100%;
+  height: 80px;
+  background-color: #8b4513;
+  border-top: 4px solid #6b3410;
+  box-shadow: inset 0 4px 0 rgba(0, 0, 0, 0.15);
+}
+
+.pw-stone-layer {
+  width: 100%;
+  height: 80px;
+  background-color: #808080;
+  border-top: 4px solid #5a5a5a;
+  box-shadow: inset 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.pw-deep-stone-layer {
+  width: 100%;
+  height: 92px;
+  background-color: #4a4a4a;
+  border-top: 4px solid #333;
+  box-shadow: inset 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+/* ===== UI Hint Overlay ===== */
+.pw-ui-hint {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 3px solid var(--pixel-black);
+  padding: 6px 10px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.pw-ui-hint span {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.45rem;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 var(--pixel-black);
+  text-transform: uppercase;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+  .pw-viewport {
+    height: 450px;
+  }
+}
+
+@media (max-width: 968px) {
+  .pw-viewport {
+    height: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pw-viewport {
+    height: 350px;
+  }
+}

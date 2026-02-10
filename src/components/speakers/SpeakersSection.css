@@ -294,3 +294,18 @@ Speaker showcase / Character selection area
     width: 50px;
   }
 }
+
+/* To Be Announced */
+.speakers-tba-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.speakers-tba-image {
+  max-width: 900px;
+  width: 80%;
+  height: auto;
+}

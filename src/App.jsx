@@ -10,6 +10,9 @@ import VenueSection from "./components/venue/VenueSection";
 import SponsorsSection from "./components/sponsors/SponsorsSection";
 import CommunityJourneySection from "./components/community-journey/CommunityJourneySection";
 import TeamSection from "./components/team/TeamSection";
+import PastEventsSection from "./components/past-events/PastEventsSection";
+import RegistrationSection from "./components/registration/RegistrationSection";
+import Footer from "./components/footer/Footer";
 import useRevealObserver from "./utils/useRevealObserver";
 import "./App.css";
 
@@ -23,16 +26,21 @@ function App() {
       <HeroSection />
       <AboutSection />
       <StatsSection />
-      <TracksSection />
+      {/* <TracksSection /> */}
       <AgendaSection />
-      <WorkshopsSection />
+      {/* <WorkshopsSection /> */}
       <SpeakersSection />
       <VenueSection />
       <SponsorsSection />
       <CommunityJourneySection />
-      <TeamSection />
+      {/* <TeamSection /> */}
+      {/* <PastEventsSection /> */}
+      <RegistrationSection />
+      <Footer />
     </div>
   );
 }
 
 export default App;
+
+//<CommunityJourneySection /> contact us
