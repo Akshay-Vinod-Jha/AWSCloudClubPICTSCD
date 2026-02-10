@@ -8,6 +8,8 @@ import WorkshopsSection from "./components/workshops/WorkshopsSection";
 import SpeakersSection from "./components/speakers/SpeakersSection";
 import VenueSection from "./components/venue/VenueSection";
 import SponsorsSection from "./components/sponsors/SponsorsSection";
+import CommunityJourneySection from "./components/community-journey/CommunityJourneySection";
+import TeamSection from "./components/team/TeamSection";
 import useRevealObserver from "./utils/useRevealObserver";
 import "./App.css";
 
@@ -27,6 +29,8 @@ function App() {
       <SpeakersSection />
       <VenueSection />
       <SponsorsSection />
+      <CommunityJourneySection />
+      <TeamSection />
     </div>
   );
 }

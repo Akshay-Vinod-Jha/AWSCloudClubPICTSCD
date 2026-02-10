@@ -1,0 +1,348 @@
+/*
+========================================
+COMMUNITY JOURNEY SECTION - LEVEL PATH / QUEST PROGRESSION
+========================================
+Progression path / level map style
+Light Grass Green background, dirt brown step cards
+*/
+
+/* ===== Section Container ===== */
+.journey-section {
+  width: 100%;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(107, 203, 119, 0.7) 0%,
+      rgba(76, 175, 80, 0.55) 100%
+    ),
+    url("../../assets/images/background/pixel_journey_path.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  border-top: 4px solid #4caf50;
+  border-bottom: 4px solid #8b4513;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+/* ===== Journey Path Background ===== */
+.journey-path-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 1;
+  overflow: hidden;
+  /* Pixel dirt/grass path pattern via CSS */
+  background:
+    repeating-linear-gradient(
+        90deg,
+        #4caf50 0px,
+        #4caf50 48px,
+        #3d8b40 48px,
+        #3d8b40 52px
+      )
+      0 0 / 100% 28px no-repeat,
+    repeating-linear-gradient(
+        90deg,
+        #8b4513 0px,
+        #8b4513 48px,
+        #6d3410 48px,
+        #6d3410 52px
+      )
+      0 28px / 100% 44px no-repeat,
+    repeating-linear-gradient(
+        90deg,
+        #654321 0px,
+        #654321 48px,
+        #503218 48px,
+        #503218 52px
+      )
+      0 72px / 100% 48px no-repeat;
+  border-top: 4px solid var(--pixel-black);
+  image-rendering: pixelated;
+}
+
+/* ===== Decorative Bird ===== */
+.journey-bird {
+  position: absolute;
+  top: 50px;
+  left: 60px;
+  width: 50px;
+  height: auto;
+  filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.3));
+  z-index: 5;
+}
+
+/* ===== Main Container ===== */
+.journey-container {
+  max-width: 1400px;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+/* ===== Section Header ===== */
+.journey-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.journey-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2rem;
+  color: var(--pixel-white);
+  text-shadow:
+    4px 4px 0 var(--pixel-black),
+    -1px -1px 0 var(--pixel-black),
+    1px -1px 0 var(--pixel-black),
+    -1px 1px 0 var(--pixel-black);
+  text-transform: uppercase;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.journey-subtitle {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.75rem;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 0 var(--pixel-black);
+  text-transform: uppercase;
+}
+
+/* ===== Progression Path Layout ===== */
+.journey-path {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+}
+
+/* ===== Step Card - Level Checkpoint ===== */
+.journey-step-card {
+  background-color: #8b4513;
+  border: 6px solid var(--pixel-black);
+  padding: 24px 20px;
+  position: relative;
+  box-shadow:
+    8px 8px 0 rgba(0, 0, 0, 0.7),
+    inset 0 -6px 0 rgba(0, 0, 0, 0.3),
+    inset 0 6px 0 rgba(160, 82, 45, 0.4);
+  flex: 1;
+  min-width: 220px;
+  max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ===== Level Number Badge ===== */
+.journey-step-number-badge {
+  background-color: #4caf50;
+  border: 4px solid var(--pixel-black);
+  padding: 8px 16px;
+  margin-bottom: 16px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.journey-step-number {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.8rem;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 0 var(--pixel-black);
+  text-transform: uppercase;
+}
+
+/* ===== Step Content ===== */
+.journey-step-content {
+  margin-bottom: 16px;
+}
+
+.journey-step-title {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.85rem;
+  color: #f5f5f5;
+  text-shadow: 2px 2px 0 var(--pixel-black);
+  text-transform: uppercase;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.journey-step-desc {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.55rem;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 var(--pixel-black);
+  line-height: 1.8;
+  opacity: 0.9;
+}
+
+/* ===== Checkpoint Diamond ===== */
+.journey-checkpoint {
+  background-color: #47a3ff;
+  border: 4px solid var(--pixel-black);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+}
+
+.journey-checkpoint-diamond {
+  font-size: 1rem;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 0 var(--pixel-black);
+}
+
+/* ===== Connector Blocks ===== */
+.journey-connector {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  padding: 0 4px;
+  align-self: center;
+}
+
+.journey-connector-block {
+  width: 16px;
+  height: 16px;
+  background-color: #4caf50;
+  border: 3px solid var(--pixel-black);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Explorer Character ===== */
+.journey-explorer-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 40px;
+  padding-right: 40px;
+  position: relative;
+}
+
+.journey-explorer {
+  width: 180px;
+  height: auto;
+  filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.4));
+}
+
+.journey-explorer-speech {
+  background-color: #f5f5f5;
+  border: 4px solid var(--pixel-black);
+  padding: 8px 16px;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.journey-explorer-speech span {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.6rem;
+  color: var(--pixel-black);
+  text-transform: uppercase;
+}
+
+/* Speech bubble pointer */
+.journey-explorer-speech::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  right: 30px;
+  width: 12px;
+  height: 12px;
+  background-color: #f5f5f5;
+  border-right: 4px solid var(--pixel-black);
+  border-bottom: 4px solid var(--pixel-black);
+}
+
+/* ===== Responsive - Tablet ===== */
+@media (max-width: 1024px) {
+  .journey-path {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .journey-step-card {
+    min-width: 200px;
+    max-width: 260px;
+  }
+
+  .journey-connector {
+    display: none;
+  }
+}
+
+/* ===== Responsive - Mobile ===== */
+@media (max-width: 768px) {
+  .journey-section {
+    padding: 60px 16px;
+  }
+
+  .journey-title {
+    font-size: 1.3rem;
+  }
+
+  .journey-path {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .journey-step-card {
+    min-width: 280px;
+    max-width: 340px;
+    width: 100%;
+  }
+
+  .journey-connector {
+    display: flex;
+    flex-direction: column;
+    padding: 4px 0;
+  }
+
+  .journey-explorer-wrapper {
+    align-items: center;
+    padding-right: 0;
+  }
+
+  .journey-bird {
+    top: 20px;
+    left: 20px;
+    width: 36px;
+  }
+}
+
+/* ===== Responsive - Small Mobile ===== */
+@media (max-width: 480px) {
+  .journey-title {
+    font-size: 1rem;
+  }
+
+  .journey-step-card {
+    min-width: 240px;
+    max-width: 300px;
+    padding: 18px 14px;
+  }
+
+  .journey-step-title {
+    font-size: 0.7rem;
+  }
+
+  .journey-step-desc {
+    font-size: 0.5rem;
+  }
+}
