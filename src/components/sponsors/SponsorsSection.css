@@ -11,8 +11,8 @@ Sponsor showcase / Guild board style
   background-image:
     linear-gradient(
       to bottom,
-      rgba(245, 245, 245, 0.6) 0%,
-      rgba(255, 255, 255, 0.4) 100%
+      rgba(245, 245, 255, 0.7) 0%,
+      rgba(235, 240, 255, 0.6) 100%
     ),
     url("../../assets/images/background/background_1.jpg");
   background-size: cover;
