@@ -56,7 +56,7 @@ const VenueSection = () => {
               <div className="venue-details">
                 <div className="venue-detail-item reveal reveal--slide">
                   <span className="venue-label">▶ Venue:</span>
-                  <span className="venue-value">PICT Campus</span>
+                  <span className="venue-value">Cloud 99 Banquet</span>
                 </div>
 
                 <div
@@ -65,7 +65,7 @@ const VenueSection = () => {
                 >
                   <span className="venue-label">▶ Address:</span>
                   <span className="venue-value">
-                    Pune Institute of Computer Technology
+                    Vinode Nagar, Phase 1, Hinjawadi Rajiv Gandhi Infotech Park
                   </span>
                 </div>
 
@@ -74,9 +74,7 @@ const VenueSection = () => {
                   style={{ animationDelay: "240ms" }}
                 >
                   <span className="venue-label">▶ Location:</span>
-                  <span className="venue-value">
-                    Survey No. 27, Near Trimurti Chowk
-                  </span>
+                  <span className="venue-value">Hinjawadi, Pune</span>
                 </div>
 
                 <div
@@ -84,14 +82,16 @@ const VenueSection = () => {
                   style={{ animationDelay: "360ms" }}
                 >
                   <span className="venue-label">▶ City:</span>
-                  <span className="venue-value">Pune, Maharashtra 411043</span>
+                  <span className="venue-value">
+                    Pimpri-Chinchwad, Maharashtra 411057
+                  </span>
                 </div>
               </div>
 
               <div className="venue-description">
                 <p>
-                  Join us at our campus venue for a full day of learning and
-                  collaboration in the heart of Pune's tech community.
+                  Join us at Cloud 99 Banquet for a full day of learning and
+                  collaboration in Hinjawadi's premier event venue.
                 </p>
               </div>
             </div>

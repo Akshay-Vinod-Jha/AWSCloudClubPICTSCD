@@ -11,6 +11,15 @@ const Footer = () => {
     }
   };
 
+  const handleRegisterClick = (e) => {
+    e.preventDefault();
+    window.open(
+      "https://konfhub.com/aws-student-community-day-pict",
+      "_blank",
+      "noopener,noreferrer",
+    );
+  };
+
   useEffect(() => {
     const footerEl = footerRef.current;
     if (!footerEl) return;
@@ -61,7 +70,9 @@ const Footer = () => {
               <a href="#agenda">Agenda</a>
             </li>
             <li>
-              <a href="#register">Register</a>
+              <a href="#register" onClick={handleRegisterClick}>
+                Register
+              </a>
             </li>
           </ul>
         </div>

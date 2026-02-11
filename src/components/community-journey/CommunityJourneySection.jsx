@@ -10,30 +10,38 @@ import cloudHelmetWarrior from "../../assets/images/characters/cloud_helmet_warr
 const journeySteps = [
   {
     number: 1,
-    title: "Discover Cloud",
-    description:
-      "Begin your adventure — explore what cloud computing is all about.",
+    icon: "🔗",
+    title: "Meetup Handle",
+    link: "https://www.meetup.com/aws-cloud-club-at-pict",
+    displayLink: "meetup.com/aws-cloud-club-at-pict",
   },
   {
     number: 2,
-    title: "Learn Fundamentals",
-    description: "Master core concepts like compute, storage, and networking.",
+    icon: "👉🏻",
+    title: "LinkedIn Handle",
+    link: "https://www.linkedin.com/company/aws-cloud-club-pict/",
+    displayLink: "linkedin.com/company/aws-cloud-club-pict",
   },
   {
     number: 3,
-    title: "Build Projects",
-    description: "Create real-world cloud solutions and level up your skills.",
+    icon: "👉🏻",
+    title: "Instagram Handle",
+    link: "https://www.instagram.com/awscloudclubs.pict?igsh=ZGhkeGkxbTUxZnM4",
+    displayLink: "@awscloudclubs.pict",
   },
   {
     number: 4,
-    title: "Lead & Contribute",
-    description: "Mentor others, speak at events, and shape the community.",
+    icon: "👉🏻",
+    title: "WhatsApp Handle",
+    link: "https://whatsapp.com/channel/0029Vb6eEa0C1Fu7wpFTta0a",
+    displayLink: "WhatsApp Channel",
   },
 ];
 
 const CommunityJourneySection = () => {
   const sectionRef = useRef(null);
   const stepsRef = useRef([]);
+  const cardRefs = useRef([]);
 
   // Total 7 elements: box0, conn0, box1, conn1, box2, conn2, box3
   const STEP_DELAY = 200; // ms between each reveal
@@ -90,8 +98,10 @@ const CommunityJourneySection = () => {
       <div className="journey-container">
         {/* Section Heading */}
         <div className="journey-header">
-          <h2 className="journey-title">Your Community Journey</h2>
-          <p className="journey-subtitle">Level Up Your Cloud Skills</p>
+          <h2 className="journey-title">Connect With Us</h2>
+          <p className="journey-subtitle">
+            Join Our Community Across Platforms
+          </p>
         </div>
 
         {/* Progression Path */}
@@ -99,13 +109,18 @@ const CommunityJourneySection = () => {
           {journeySteps.map((step, index) => (
             <React.Fragment key={step.number}>
               {/* Step Card */}
-              <div ref={assignRef} className="journey-step-card quest-hidden">
-                <div className="journey-step-number-badge">
-                  <span className="journey-step-number">LV.{step.number}</span>
-                </div>
+              <div
+                ref={(el) => {
+                  assignRef(el);
+                  if (el && !cardRefs.current.includes(el)) {
+                    cardRefs.current.push(el);
+                  }
+                }}
+                className="journey-step-card quest-hidden"
+              >
                 <div className="journey-step-content">
                   <h3 className="journey-step-title">{step.title}</h3>
-                  <p className="journey-step-desc">{step.description}</p>
+                  <p className="journey-step-desc">{step.displayLink}</p>
                 </div>
                 {/* Checkpoint Indicator */}
                 <div className="journey-checkpoint">
@@ -133,7 +148,7 @@ const CommunityJourneySection = () => {
             className="journey-explorer pixel-crisp"
           />
           <div className="journey-explorer-speech">
-            <span>Quest Complete!</span>
+            <span>Follow Us!</span>
           </div>
         </div>
       </div>

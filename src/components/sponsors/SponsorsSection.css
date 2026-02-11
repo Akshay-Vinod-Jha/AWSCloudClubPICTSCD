@@ -70,6 +70,7 @@ Sponsor showcase / Guild board style
 .sponsors-header {
   text-align: center;
   margin-bottom: 60px;
+  border-bottom: none;
 }
 
 .sponsors-title {
@@ -90,6 +91,8 @@ Sponsor showcase / Guild board style
   color: #ffcc00;
   text-shadow: 3px 3px 0 var(--pixel-black);
   text-transform: uppercase;
+  border-bottom: none;
+  text-decoration: none;
 }
 
 /* Sponsor Tiers Container */

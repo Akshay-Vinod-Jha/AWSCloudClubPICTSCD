@@ -163,9 +163,16 @@ Light Grass Green background, dirt brown step cards
   text-transform: uppercase;
 }
 
+.journey-step-icon {
+  font-size: 1.2rem;
+  display: block;
+  filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.5));
+}
+
 /* ===== Step Content ===== */
 .journey-step-content {
   margin-bottom: 16px;
+  margin-top: 16px;
 }
 
 .journey-step-title {

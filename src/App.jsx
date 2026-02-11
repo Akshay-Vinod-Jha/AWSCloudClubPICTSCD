@@ -23,19 +23,35 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <HeroSection />
-      <AboutSection />
+      <div id="home">
+        <HeroSection />
+      </div>
+      <div id="about">
+        <AboutSection />
+      </div>
       <StatsSection />
       {/* <TracksSection /> */}
-      <AgendaSection />
+      <div id="agenda">
+        <AgendaSection />
+      </div>
       {/* <WorkshopsSection /> */}
-      <SpeakersSection />
-      <VenueSection />
-      <SponsorsSection />
-      <CommunityJourneySection />
+      <div id="speakers">
+        <SpeakersSection />
+      </div>
+      <div id="venue">
+        <VenueSection />
+      </div>
+      <div id="sponsors">
+        <SponsorsSection />
+      </div>
+      <div id="register">
+        <RegistrationSection />
+      </div>
+      <div id="connect">
+        <CommunityJourneySection />
+      </div>
       {/* <TeamSection /> */}
       {/* <PastEventsSection /> */}
-      <RegistrationSection />
       <Footer />
     </div>
   );

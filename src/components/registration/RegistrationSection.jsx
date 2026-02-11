@@ -4,7 +4,7 @@ import { addPixelBurst } from "../../utils/pixelBurst";
 
 // Character imports
 import scdMascot from "../../assets/images/characters/scd_event_mascot.png";
-import cloudBuilder from "../../assets/images/characters/cloud_builder.png";
+import cloudBuilder from "../../assets/images/characters/cloud_helmet_warrior.png";
 import cloudHelper from "../../assets/images/characters/cloud_helper.png";
 
 // Background image (applied via CSS — pixel_final_cta_bg.jpg)
@@ -25,6 +25,22 @@ const RegistrationSection = () => {
       return addPixelBurst(ctaBtnRef.current, cloudHelper);
     }
   }, []);
+
+  const handleRegisterClick = (e) => {
+    e.preventDefault();
+    const btn = e.currentTarget;
+    btn.style.transition = "filter 0.3s ease";
+    btn.style.filter = "brightness(2) saturate(2)";
+
+    setTimeout(() => {
+      window.open(
+        "https://konfhub.com/aws-student-community-day-pict",
+        "_blank",
+        "noopener,noreferrer",
+      );
+      btn.style.filter = "";
+    }, 600);
+  };
 
   useEffect(() => {
     const sectionEl = sectionRef.current;
@@ -98,6 +114,7 @@ const RegistrationSection = () => {
               ref={ctaBtnRef}
               className="registration-cta-button"
               type="button"
+              onClick={handleRegisterClick}
             >
               Register Now
             </button>

@@ -6,7 +6,6 @@ import "./AboutSection.css";
 // - student_explorer.png: Student Participant Character (main)
 // - cloud_jadugar.png: Magical companion (decorative accent)
 import studentExplorer from "../../assets/images/characters/student_explorer.png";
-import cloudJadugar from "../../assets/images/characters/cloud_jadugar.png";
 
 const AboutSection = () => {
   return (
@@ -14,11 +13,6 @@ const AboutSection = () => {
       <div className="about-container">
         <div className="about-header">
           <h2 className="about-title">What is Student Community Day?</h2>
-          <img
-            src={cloudJadugar}
-            alt="Cloud Jadugar"
-            className="about-companion pixel-crisp"
-          />
         </div>
 
         <div className="about-content">

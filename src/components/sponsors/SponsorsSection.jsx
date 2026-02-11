@@ -9,7 +9,7 @@ import cloudHelper from "../../assets/images/characters/cloud_helper.png";
 import cloudBird from "../../assets/images/characters/cloud_bird.png";
 import cloudBuilder from "../../assets/images/characters/cloud_builder.png";
 import cloudSleep from "../../assets/images/characters/cloud_sleep.png";
-import toBeAnnounced from "../../assets/images/tobeannounced.jpg";
+import toBeAnnounced from "../../assets/images/tobeannounced.png";
 import { triggerLandingBurst } from "../../utils/landingBurst";
 
 const SponsorsSection = () => {

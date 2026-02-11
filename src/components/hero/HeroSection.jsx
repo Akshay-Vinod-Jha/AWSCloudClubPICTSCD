@@ -28,6 +28,22 @@ const HeroSection = () => {
     }
   }, []);
 
+  const handleRegisterClick = (e) => {
+    e.preventDefault();
+    const btn = e.currentTarget;
+    btn.style.transition = "filter 0.3s ease";
+    btn.style.filter = "brightness(2) saturate(2)";
+
+    setTimeout(() => {
+      window.open(
+        "https://konfhub.com/aws-student-community-day-pict",
+        "_blank",
+        "noopener,noreferrer",
+      );
+      btn.style.filter = "";
+    }, 600);
+  };
+
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -67,7 +83,11 @@ const HeroSection = () => {
               </div>
             </div>
 
-            <button ref={ctaBtnRef} className="pixel-button hero-cta">
+            <button
+              ref={ctaBtnRef}
+              className="pixel-button hero-cta"
+              onClick={handleRegisterClick}
+            >
               Register Now
             </button>
           </div>

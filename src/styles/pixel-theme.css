@@ -692,8 +692,8 @@ Usage: Applied to .pixel-button on click interaction
 /* Particle container */
 .pixel-burst-particle {
   position: absolute;
-  width: 16px;
-  height: 16px;
+  width: 32px;
+  height: 32px;
   pointer-events: none;
   z-index: 100;
   image-rendering: pixelated;
