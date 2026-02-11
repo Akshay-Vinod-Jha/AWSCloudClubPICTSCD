@@ -16,6 +16,9 @@ import locationIcon from "../../assets/images/icons/location_pixel.jpg";
 // Background image
 import heroBackground from "../../assets/images/background/background_1.jpg";
 
+// Club logo
+import clubLogo from "../../assets/images/logo/aws cloudcraft logo.png";
+
 const HeroSection = () => {
   const ctaBtnRef = useRef(null);
 
@@ -41,15 +44,17 @@ const HeroSection = () => {
 
           {/* Text Content */}
           <div className="hero-text">
-            <h1 className="hero-title">
-              Student
-              <br />
-              Community
-              <br />
-              Day
-            </h1>
+            <div className="hero-logo-wrapper">
+              <img
+                src={clubLogo}
+                alt="AWS Cloud Club PICT"
+                className="hero-logo pixel-crisp"
+              />
+              <p className="hero-presents">Presents</p>
+              <h1 className="hero-title">Student Community Day</h1>
+            </div>
 
-            <p className="hero-subtitle">Build • Learn • Explore the Cloud</p>
+            <p className="hero-subtitle">Build • Innovate • Scale</p>
 
             <div className="hero-info">
               <div className="info-item">
@@ -58,15 +63,7 @@ const HeroSection = () => {
                   alt=""
                   className="info-icon pixel-crisp"
                 />
-                <span>Coming Soon</span>
-              </div>
-              <div className="info-item">
-                <img
-                  src={locationIcon}
-                  alt=""
-                  className="info-icon pixel-crisp"
-                />
-                <span>Campus Location TBA</span>
+                <span>4th April, 2026</span>
               </div>
             </div>
 

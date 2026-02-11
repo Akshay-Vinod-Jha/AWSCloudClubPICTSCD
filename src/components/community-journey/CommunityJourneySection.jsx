@@ -3,7 +3,7 @@ import "./CommunityJourneySection.css";
 
 // Character imports
 import cloudExplorer from "../../assets/images/characters/cloud_explorer.png";
-import cloudBird from "../../assets/images/characters/cloud_bird.png";
+import cloudHelmetWarrior from "../../assets/images/characters/cloud_helmet_warrior.png";
 
 // Background image (applied via CSS)
 
@@ -80,10 +80,10 @@ const CommunityJourneySection = () => {
       {/* Journey Path Background — CSS pattern fallback */}
       <div className="journey-path-bg"></div>
 
-      {/* Decorative Bird - Near path edge top-left */}
+      {/* Decorative Warrior - Near path edge top-left */}
       <img
-        src={cloudBird}
-        alt="Cloud Bird"
+        src={cloudHelmetWarrior}
+        alt="Cloud Helmet Warrior"
         className="journey-bird pixel-crisp"
       />
 

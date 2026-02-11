@@ -4,9 +4,9 @@ import "./AboutSection.css";
 // Character imports - According to characters_info.txt
 // AboutSection uses:
 // - student_explorer.png: Student Participant Character (main)
-// - cloud_sheep.png: Friendly companion (decorative accent)
+// - cloud_jadugar.png: Magical companion (decorative accent)
 import studentExplorer from "../../assets/images/characters/student_explorer.png";
-import cloudSheep from "../../assets/images/characters/cloud_sleep.png";
+import cloudJadugar from "../../assets/images/characters/cloud_jadugar.png";
 
 const AboutSection = () => {
   return (
@@ -15,8 +15,8 @@ const AboutSection = () => {
         <div className="about-header">
           <h2 className="about-title">What is Student Community Day?</h2>
           <img
-            src={cloudSheep}
-            alt="Cloud Companion"
+            src={cloudJadugar}
+            alt="Cloud Jadugar"
             className="about-companion pixel-crisp"
           />
         </div>
@@ -31,14 +31,14 @@ const AboutSection = () => {
 
             <div className="about-highlights">
               <div className="highlight-item reveal reveal--slide">
-                <span className="highlight-icon">▶</span>
+                <span className="highlight-icon">●</span>
                 <span className="highlight-text">Hands-on workshops</span>
               </div>
               <div
                 className="highlight-item reveal reveal--slide"
                 style={{ animationDelay: "120ms" }}
               >
-                <span className="highlight-icon">▶</span>
+                <span className="highlight-icon">●</span>
                 <span className="highlight-text">
                   Student-friendly sessions
                 </span>
@@ -47,7 +47,7 @@ const AboutSection = () => {
                 className="highlight-item reveal reveal--slide"
                 style={{ animationDelay: "240ms" }}
               >
-                <span className="highlight-icon">▶</span>
+                <span className="highlight-icon">●</span>
                 <span className="highlight-text">Community networking</span>
               </div>
             </div>

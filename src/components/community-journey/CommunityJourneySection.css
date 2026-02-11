@@ -111,9 +111,9 @@ Light Grass Green background, dirt brown step cards
 
 .journey-subtitle {
   font-family: "Press Start 2P", cursive;
-  font-size: 0.75rem;
-  color: #f5f5f5;
-  text-shadow: 2px 2px 0 var(--pixel-black);
+  font-size: 1.1rem;
+  color: #ffcc00;
+  text-shadow: 3px 3px 0 var(--pixel-black);
   text-transform: uppercase;
 }
 

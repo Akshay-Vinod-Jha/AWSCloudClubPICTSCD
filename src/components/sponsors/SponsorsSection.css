@@ -86,9 +86,9 @@ Sponsor showcase / Guild board style
 
 .sponsors-subtitle {
   font-family: "Press Start 2P", cursive;
-  font-size: 0.75rem;
-  color: #47a3ff;
-  text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  color: #ffcc00;
+  text-shadow: 3px 3px 0 var(--pixel-black);
   text-transform: uppercase;
 }
 

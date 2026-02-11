@@ -3,8 +3,8 @@ import "./StatsSection.css";
 
 // Character imports - According to characters_info.txt
 // StatsSection uses:
-// - cloud_golem.png: Guardian/Strength symbol representing scale & impact
-import cloudGolem from "../../assets/images/characters/cloud_golem.png";
+// - cloud_eagle_warrior.png: Warrior/Strength symbol representing scale & impact
+import cloudEagleWarrior from "../../assets/images/characters/cloud_eagle_warrior.png";
 
 const StatsSection = () => {
   const stats = [
@@ -13,7 +13,7 @@ const StatsSection = () => {
       label: "Students",
     },
     {
-      number: "20+",
+      number: "10+",
       label: "Speakers",
     },
     {
@@ -39,8 +39,8 @@ const StatsSection = () => {
           {/* Guardian Character - Left Side */}
           <div className="stats-guardian">
             <img
-              src={cloudGolem}
-              alt="Cloud Golem Guardian"
+              src={cloudEagleWarrior}
+              alt="Cloud Eagle Warrior"
               className="golem-image pixel-crisp"
             />
           </div>

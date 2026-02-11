@@ -21,7 +21,7 @@ Main landing screen with Minecraft aesthetic
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -81,14 +81,43 @@ Main landing screen with Minecraft aesthetic
   z-index: 20;
 }
 
-.hero-title {
-  font-size: 3rem;
-  color: var(--pixel-white);
+/* Club Logo + Presents + Title Row */
+.hero-logo-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
   margin-bottom: 20px;
+}
+
+.hero-logo {
+  width: 180px;
+  height: auto;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+/* Presents Label */
+.hero-presents {
+  font-size: 0.75rem;
+  color: var(--pixel-yellow);
+  text-shadow: 3px 3px 0 var(--pixel-black);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin: 0;
+}
+
+.hero-title {
+  font-size: 1.8rem;
+  color: var(--pixel-white);
+  margin: 0;
   line-height: 1.2;
   text-shadow: 6px 6px 0 var(--pixel-black);
   animation: pixelReveal 800ms steps(10) forwards;
   clip-path: inset(0 100% 0 0);
+  white-space: nowrap;
 }
 
 /* Pixel Reveal Animation - Minecraft Chunk Loading Style */
@@ -129,15 +158,15 @@ Main landing screen with Minecraft aesthetic
 }
 
 .hero-subtitle {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: var(--pixel-yellow);
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   text-shadow: 3px 3px 0 var(--pixel-black);
   letter-spacing: 2px;
 }
 
 .hero-info {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -147,14 +176,14 @@ Main landing screen with Minecraft aesthetic
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   color: var(--pixel-white);
-  text-shadow: 2px 2px 0 var(--pixel-black);
+  text-shadow: 3px 3px 0 var(--pixel-black);
 }
 
 .info-icon {
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
   filter: drop-shadow(2px 2px 0 var(--pixel-black));
 }
@@ -201,11 +230,19 @@ Main landing screen with Minecraft aesthetic
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
 
   .hero-subtitle {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  .hero-logo {
+    width: 130px;
+  }
+
+  .hero-presents {
+    font-size: 0.65rem;
   }
 
   .builder-image {
@@ -222,22 +259,31 @@ Main landing screen with Minecraft aesthetic
   }
 
   .info-icon {
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
   }
 
   .info-item {
-    font-size: 0.65rem;
+    font-size: 0.8rem;
   }
 }
 
 @media (max-width: 640px) {
   .hero-title {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    white-space: normal;
   }
 
   .hero-subtitle {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
+  }
+
+  .hero-logo {
+    width: 100px;
+  }
+
+  .hero-presents {
+    font-size: 0.55rem;
   }
 
   .hero-cta {
@@ -254,12 +300,12 @@ Main landing screen with Minecraft aesthetic
   }
 
   .info-icon {
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
   }
 
   .info-item {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     gap: 8px;
   }
 }
