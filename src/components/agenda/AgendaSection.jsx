@@ -11,44 +11,59 @@ import cloudHelper from "../../assets/images/characters/cloud_helper.png";
 const AgendaSection = () => {
   const agendaItems = [
     {
-      time: "09:00",
+      time: "08:00",
       title: "Registration & Welcome",
       subtitle: "Check-in and morning coffee",
     },
     {
-      time: "10:00",
+      time: "09:00",
       title: "Opening Keynote",
       subtitle: "Cloud computing in education",
     },
     {
-      time: "11:00",
-      title: "Cloud Fundamentals Session",
-      subtitle: "AWS core services overview",
+      time: "09:30",
+      title: "Panel Discussion",
+      subtitle: "Discussing the future of cloud in learning",
     },
     {
-      time: "12:30",
+      time: "10:00",
+      title: "Speaker Sessions",
+      subtitle: "Expert talks on cloud technologies and trends",
+    },
+    {
+      time: "12:00",
       title: "Lunch Break",
-      subtitle: "Networking and refreshments",
+      subtitle: "Networking and refreshments provided",
+    },
+    {
+      time: "13:00",
+      title: "AI/ML ARC",
+      subtitle: "AI/ML in cloud computing",
     },
     {
       time: "13:30",
-      title: "Hands-on Workshops",
-      subtitle: "Build your first cloud app",
+      title: "DevOps ARC",
+      subtitle: "DevOps in cloud computing",
     },
     {
+      time: "14:00",
+      title: "Serverless ARC",
+      subtitle: "Serverless computing in the cloud",
+    },
+      {
+      time: "14:30",
+      title: "Activity",
+      subtitle: "Interactive Activity",
+    },
+    {
+      time: "15:00",
+      title: "Lightning Talks",
+      subtitle: "Quick presentations from community members",
+    },
+     {
       time: "15:30",
-      title: "Advanced Cloud Talks",
-      subtitle: "DevOps and AI/ML sessions",
-    },
-    {
-      time: "17:00",
-      title: "Community Networking",
-      subtitle: "Meet speakers and peers",
-    },
-    {
-      time: "18:00",
-      title: "Closing Ceremony",
-      subtitle: "Wrap-up and prizes",
+      title: "Fireside Chat with cloud captains",
+      subtitle: "Informal discussion with cloud leaders and closing remarks",
     },
   ];
 
