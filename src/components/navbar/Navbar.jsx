@@ -3,7 +3,7 @@ import "./Navbar.css";
 import { addPixelBurst } from "../../utils/pixelBurst";
 
 // Brand logo
-import awsCloudcraftLogo from "../../assets/images/logo/aws cloudcraft logo.png";
+import awsCloudcraftLogo from "../../assets/images/logo/navlogo.png";
 import cloudHelper from "../../assets/images/characters/cloud_helper.png";
 
 const Navbar = () => {
