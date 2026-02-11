@@ -325,3 +325,37 @@ Sky blue background, gold CTA emphasis
     transform: translateY(0px);
   }
 }
+
+/* ========================================
+   SPARKLE ANIMATION ON BUTTON CLICK
+   ======================================== */
+
+.sparkle-animate {
+  animation: buttonSparkle 0.6s ease-out forwards;
+}
+
+@keyframes buttonSparkle {
+  0% {
+    box-shadow:
+      6px 6px 0 var(--pixel-black),
+      0 0 0 rgba(255, 215, 0, 0.8),
+      -8px -8px 0 rgba(255, 215, 0, 0.6),
+      8px -8px 0 rgba(255, 215, 0, 0.6),
+      -8px 8px 0 rgba(255, 215, 0, 0.6),
+      8px 8px 0 rgba(255, 215, 0, 0.6);
+  }
+  50% {
+    box-shadow:
+      6px 6px 0 var(--pixel-black),
+      0 0 15px rgba(255, 215, 0, 1),
+      -12px -12px 0 rgba(255, 215, 0, 0.8),
+      12px -12px 0 rgba(255, 215, 0, 0.8),
+      -12px 12px 0 rgba(255, 215, 0, 0.8),
+      12px 12px 0 rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    box-shadow:
+      6px 6px 0 var(--pixel-black),
+      0 0 0 rgba(255, 215, 0, 0);
+  }
+}

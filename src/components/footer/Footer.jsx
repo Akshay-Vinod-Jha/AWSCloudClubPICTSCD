@@ -64,9 +64,6 @@ const Footer = () => {
               <a href="#about">About</a>
             </li>
             <li>
-              <a href="#tracks">Tracks</a>
-            </li>
-            <li>
               <a href="#agenda">Agenda</a>
             </li>
             <li>
@@ -93,7 +90,7 @@ const Footer = () => {
         className="footer-copyright-bar footer-slide-hidden-right"
       >
         <p className="footer-copyright-text">
-          © 2025 Student Community Day — All rights reserved.
+          © 2026 AWS Student Community Day Pune - All rights reserved.
         </p>
       </div>
 

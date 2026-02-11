@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from "react";
+import React, { useRef, useState } from "react";
 import "./CommunityJourneySection.css";
 
 // Character imports
@@ -13,74 +13,37 @@ const journeySteps = [
     icon: "🔗",
     title: "Meetup Handle",
     link: "https://www.meetup.com/aws-cloud-club-at-pict",
-    displayLink: "meetup.com/aws-cloud-club-at-pict",
   },
   {
     number: 2,
     icon: "👉🏻",
     title: "LinkedIn Handle",
     link: "https://www.linkedin.com/company/aws-cloud-club-pict/",
-    displayLink: "linkedin.com/company/aws-cloud-club-pict",
   },
   {
     number: 3,
     icon: "👉🏻",
     title: "Instagram Handle",
     link: "https://www.instagram.com/awscloudclubs.pict?igsh=ZGhkeGkxbTUxZnM4",
-    displayLink: "@awscloudclubs.pict",
   },
   {
     number: 4,
     icon: "👉🏻",
     title: "WhatsApp Handle",
     link: "https://whatsapp.com/channel/0029Vb6eEa0C1Fu7wpFTta0a",
-    displayLink: "WhatsApp Channel",
   },
 ];
 
 const CommunityJourneySection = () => {
   const sectionRef = useRef(null);
-  const stepsRef = useRef([]);
-  const cardRefs = useRef([]);
+  const [sparkling, setSparkling] = useState(null);
 
-  // Total 7 elements: box0, conn0, box1, conn1, box2, conn2, box3
-  const STEP_DELAY = 200; // ms between each reveal
-
-  const runSequence = useCallback(() => {
-    const els = stepsRef.current;
-    els.forEach((el, i) => {
-      if (!el) return;
-      setTimeout(() => {
-        el.classList.remove("quest-hidden");
-        el.classList.add("quest-revealed");
-      }, i * STEP_DELAY);
-    });
-  }, []);
-
-  useEffect(() => {
-    const sectionEl = sectionRef.current;
-    if (!sectionEl) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          runSequence();
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.4 },
-    );
-
-    observer.observe(sectionEl);
-    return () => observer.disconnect();
-  }, [runSequence]);
-
-  // Collect refs for the 7 sequential elements
-  let stepIndex = 0;
-  const assignRef = (el) => {
-    if (el && !stepsRef.current.includes(el)) {
-      stepsRef.current.push(el);
-    }
+  const handleCardClick = (link, index) => {
+    setSparkling(index);
+    window.open(link, "_blank");
+    setTimeout(() => {
+      setSparkling(null);
+    }, 500);
   };
 
   return (
@@ -89,12 +52,7 @@ const CommunityJourneySection = () => {
       <div className="journey-path-bg"></div>
 
       {/* Decorative Warrior - Near path edge top-left */}
-      <img
-        src={cloudHelmetWarrior}
-        alt="Cloud Helmet Warrior"
-        className="journey-bird pixel-crisp"
-      />
-
+      
       <div className="journey-container">
         {/* Section Heading */}
         <div className="journey-header">
@@ -110,17 +68,12 @@ const CommunityJourneySection = () => {
             <React.Fragment key={step.number}>
               {/* Step Card */}
               <div
-                ref={(el) => {
-                  assignRef(el);
-                  if (el && !cardRefs.current.includes(el)) {
-                    cardRefs.current.push(el);
-                  }
-                }}
-                className="journey-step-card quest-hidden"
+                className={`journey-step-card ${sparkling === index ? "sparkle-animate" : ""}`}
+                onClick={() => handleCardClick(step.link, index)}
+                style={{ cursor: "pointer" }}
               >
                 <div className="journey-step-content">
                   <h3 className="journey-step-title">{step.title}</h3>
-                  <p className="journey-step-desc">{step.displayLink}</p>
                 </div>
                 {/* Checkpoint Indicator */}
                 <div className="journey-checkpoint">
@@ -130,7 +83,7 @@ const CommunityJourneySection = () => {
 
               {/* Connector Block (between steps) */}
               {index < journeySteps.length - 1 && (
-                <div ref={assignRef} className="journey-connector quest-hidden">
+                <div className="journey-connector">
                   <div className="journey-connector-block"></div>
                   <div className="journey-connector-block"></div>
                   <div className="journey-connector-block"></div>

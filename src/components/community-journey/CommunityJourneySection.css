@@ -144,6 +144,16 @@ Light Grass Green background, dirt brown step cards
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transition: background-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.journey-step-card:hover {
+  background-color: #a0522d;
+  box-shadow:
+    8px 8px 0 rgba(0, 0, 0, 0.7),
+    inset 0 -6px 0 rgba(0, 0, 0, 0.3),
+    inset 0 6px 0 rgba(160, 82, 45, 0.4),
+    0 0 12px rgba(76, 175, 80, 0.4);
 }
 
 /* ===== Level Number Badge ===== */
@@ -183,15 +193,6 @@ Light Grass Green background, dirt brown step cards
   text-transform: uppercase;
   line-height: 1.5;
   margin-bottom: 10px;
-}
-
-.journey-step-desc {
-  font-family: "Press Start 2P", cursive;
-  font-size: 0.55rem;
-  color: #f5f5f5;
-  text-shadow: 1px 1px 0 var(--pixel-black);
-  line-height: 1.8;
-  opacity: 0.9;
 }
 
 /* ===== Checkpoint Diamond ===== */
@@ -354,28 +355,56 @@ Light Grass Green background, dirt brown step cards
   }
 }
 
-/* ========================================
-   QUEST PROGRESSION REVEAL ANIMATION
-   ======================================== */
 
 .quest-hidden {
-  visibility: hidden;
-  transform: translateY(-8px);
+  display: none;
 }
 
-.quest-revealed {
-  visibility: visible;
-  transform: translateY(0px);
-  animation: questRevealSnap 150ms steps(2) forwards;
+/* ========================================
+   SPARKLE ANIMATION
+   ======================================== */
+
+.sparkle-animate {
+  animation: sparkleEffect 0.5s ease-out forwards;
 }
 
-@keyframes questRevealSnap {
+@keyframes sparkleEffect {
   0% {
+    opacity: 1;
     visibility: visible;
-    transform: translateY(-8px);
+    box-shadow:
+      8px 8px 0 rgba(0, 0, 0, 0.7),
+      inset 0 -6px 0 rgba(0, 0, 0, 0.3),
+      inset 0 6px 0 rgba(160, 82, 45, 0.4),
+      0 0 0 rgba(255, 215, 0, 0.8),
+      -10px -10px 0 rgba(255, 215, 0, 0.6),
+      10px -10px 0 rgba(255, 215, 0, 0.6),
+      -10px 10px 0 rgba(255, 215, 0, 0.6),
+      10px 10px 0 rgba(255, 215, 0, 0.6);
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    visibility: visible;
+    box-shadow:
+      8px 8px 0 rgba(0, 0, 0, 0.7),
+      inset 0 -6px 0 rgba(0, 0, 0, 0.3),
+      inset 0 6px 0 rgba(160, 82, 45, 0.4),
+      0 0 20px rgba(255, 215, 0, 1),
+      -15px -15px 0 rgba(255, 215, 0, 0.8),
+      15px -15px 0 rgba(255, 215, 0, 0.8),
+      -15px 15px 0 rgba(255, 215, 0, 0.8),
+      15px 15px 0 rgba(255, 215, 0, 0.8);
+    transform: scale(1.05);
   }
   100% {
+    opacity: 1;
     visibility: visible;
-    transform: translateY(0px);
+    box-shadow:
+      8px 8px 0 rgba(0, 0, 0, 0.7),
+      inset 0 -6px 0 rgba(0, 0, 0, 0.3),
+      inset 0 6px 0 rgba(160, 82, 45, 0.4),
+      0 0 0 rgba(255, 215, 0, 0);
+    transform: scale(0.98);
   }
 }

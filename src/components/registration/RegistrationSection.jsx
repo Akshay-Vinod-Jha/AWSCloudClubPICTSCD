@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback } from "react";
+import React, { useEffect, useRef, useCallback, useState } from "react";
 import "./RegistrationSection.css";
 import { addPixelBurst } from "../../utils/pixelBurst";
 
@@ -13,6 +13,7 @@ const RegistrationSection = () => {
   const ctaBtnRef = useRef(null);
   const sectionRef = useRef(null);
   const blocksRef = useRef([]);
+  const [sparklingBtn, setSparklingBtn] = useState(null);
 
   const assignBlockRef = (el) => {
     if (el && !blocksRef.current.includes(el)) {
@@ -29,6 +30,9 @@ const RegistrationSection = () => {
   const handleRegisterClick = (e) => {
     e.preventDefault();
     const btn = e.currentTarget;
+    
+    // Add sparkle animation
+    setSparklingBtn("register");
     btn.style.transition = "filter 0.3s ease";
     btn.style.filter = "brightness(2) saturate(2)";
 
@@ -39,6 +43,7 @@ const RegistrationSection = () => {
         "noopener,noreferrer",
       );
       btn.style.filter = "";
+      setSparklingBtn(null);
     }, 600);
   };
 
@@ -112,7 +117,7 @@ const RegistrationSection = () => {
           <div className="registration-cta-wrapper">
             <button
               ref={ctaBtnRef}
-              className="registration-cta-button"
+              className={`registration-cta-button ${sparklingBtn === "register" ? "sparkle-animate" : ""}`}
               type="button"
               onClick={handleRegisterClick}
             >

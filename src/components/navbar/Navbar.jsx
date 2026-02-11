@@ -142,15 +142,6 @@ const Navbar = () => {
           </li>
           <li className="navbar-item">
             <a
-              href="#sponsors"
-              className="navbar-link"
-              onClick={(e) => scrollToSection(e, "sponsors")}
-            >
-              Sponsors
-            </a>
-          </li>
-          <li className="navbar-item">
-            <a
               href="#venue"
               className="navbar-link"
               onClick={(e) => scrollToSection(e, "venue")}
@@ -158,6 +149,16 @@ const Navbar = () => {
               Venue
             </a>
           </li>
+          <li className="navbar-item">
+            <a
+              href="#sponsors"
+              className="navbar-link"
+              onClick={(e) => scrollToSection(e, "sponsors")}
+            >
+              Sponsors
+            </a>
+          </li>
+          
           <li className="navbar-item">
             <a
               href="#connect"

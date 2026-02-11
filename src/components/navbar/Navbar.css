@@ -19,9 +19,9 @@ Game menu bar / HUD style navigation
 }
 
 .navbar-container {
-  max-width: 1400px;
+  max-width: 1260px;
   margin: 0 auto;
-  padding: 16px 24px;
+  padding: 10px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,14 +37,14 @@ Game menu bar / HUD style navigation
 }
 
 .navbar-logo {
-  height: 80px;
+  height: 55px;
   width: auto;
   filter: drop-shadow(2px 2px 0 rgba(0, 0, 0, 0.3));
 }
 
 .navbar-mascot {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   filter: drop-shadow(2px 2px 0 var(--pixel-black));
 }
 
@@ -168,7 +168,7 @@ Game menu bar / HUD style navigation
 @media (max-width: 1024px) {
   .navbar-container {
     gap: 16px;
-    padding: 12px 20px;
+    padding: 8px 20px;
   }
 
   .navbar-menu {
@@ -190,18 +190,18 @@ Game menu bar / HUD style navigation
   }
 
   .navbar-mascot {
-    width: 36px;
-    height: 36px;
+    width: 26px;
+    height: 26px;
   }
 
   .navbar-logo {
-    height: 55px;
+    height: 45px;
   }
 }
 
 @media (max-width: 768px) {
   .navbar-container {
-    padding: 10px 14px;
+    padding: 8px 12px;
     gap: 12px;
   }
 
@@ -224,19 +224,19 @@ Game menu bar / HUD style navigation
   }
 
   .navbar-mascot {
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
   }
 
   .navbar-logo {
-    height: 48px;
+    height: 40px;
   }
 }
 
 @media (max-width: 640px) {
   .navbar-container {
-    padding: 10px 12px;
-    gap: 16px;
+    padding: 8px 12px;
+    gap: 12px;
   }
 
   /* Show hamburger menu */
@@ -317,11 +317,45 @@ Game menu bar / HUD style navigation
   }
 
   .navbar-mascot {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 
   .navbar-logo {
-    height: 45px;
+    height: 36px;
+  }
+}
+
+/* ========================================
+   SPARKLE ANIMATION ON BUTTON CLICK
+   ======================================== */
+
+.sparkle-animate {
+  animation: buttonSparkle 0.6s ease-out forwards;
+}
+
+@keyframes buttonSparkle {
+  0% {
+    box-shadow:
+      4px 4px 0 var(--pixel-black),
+      0 0 0 rgba(255, 215, 0, 0.8),
+      -8px -8px 0 rgba(255, 215, 0, 0.6),
+      8px -8px 0 rgba(255, 215, 0, 0.6),
+      -8px 8px 0 rgba(255, 215, 0, 0.6),
+      8px 8px 0 rgba(255, 215, 0, 0.6);
+  }
+  50% {
+    box-shadow:
+      4px 4px 0 var(--pixel-black),
+      0 0 15px rgba(255, 215, 0, 1),
+      -12px -12px 0 rgba(255, 215, 0, 0.8),
+      12px -12px 0 rgba(255, 215, 0, 0.8),
+      -12px 12px 0 rgba(255, 215, 0, 0.8),
+      12px 12px 0 rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    box-shadow:
+      4px 4px 0 var(--pixel-black),
+      0 0 0 rgba(255, 215, 0, 0);
   }
 }
