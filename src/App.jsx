@@ -14,6 +14,7 @@ import PastEventsSection from "./components/past-events/PastEventsSection";
 import RegistrationSection from "./components/registration/RegistrationSection";
 import Footer from "./components/footer/Footer";
 import useRevealObserver from "./utils/useRevealObserver";
+import { Analytics } from "@vercel/analytics/react";
 import "./App.css";
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
       {/* <TeamSection /> */}
       {/* <PastEventsSection /> */}
       <Footer />
+      <Analytics />
     </div>
   );
 }

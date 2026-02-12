@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./CommunityJourneySection.css";
 
 // Character imports
@@ -37,6 +37,28 @@ const journeySteps = [
 const CommunityJourneySection = () => {
   const sectionRef = useRef(null);
   const [sparkling, setSparkling] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.2 },
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   const handleCardClick = (link, index) => {
     setSparkling(index);
@@ -52,7 +74,7 @@ const CommunityJourneySection = () => {
       <div className="journey-path-bg"></div>
 
       {/* Decorative Warrior - Near path edge top-left */}
-      
+
       <div className="journey-container">
         {/* Section Heading */}
         <div className="journey-header">
@@ -68,9 +90,8 @@ const CommunityJourneySection = () => {
             <React.Fragment key={step.number}>
               {/* Step Card */}
               <div
-                className={`journey-step-card ${sparkling === index ? "sparkle-animate" : ""}`}
+                className={`journey-step-card ${isVisible ? "reveal-active" : ""} ${sparkling === index ? "sparkle-animate" : ""}`}
                 onClick={() => handleCardClick(step.link, index)}
-                style={{ cursor: "pointer" }}
               >
                 <div className="journey-step-content">
                   <h3 className="journey-step-title">{step.title}</h3>
@@ -83,7 +104,9 @@ const CommunityJourneySection = () => {
 
               {/* Connector Block (between steps) */}
               {index < journeySteps.length - 1 && (
-                <div className="journey-connector">
+                <div
+                  className={`journey-connector ${isVisible ? "reveal-active" : ""}`}
+                >
                   <div className="journey-connector-block"></div>
                   <div className="journey-connector-block"></div>
                   <div className="journey-connector-block"></div>
