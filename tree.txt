@@ -1,0 +1,114 @@
+scd-pixel-site/
+├── .git/
+├── node_modules/
+├── public/
+│   └── images/
+│       ├── AWS_SCD_images/
+│       │   ├── ChatGPT Image Feb 10, 2026, 07_14_27 PM.png
+│       │   ├── ChatGPT Image Feb 11, 2026, 09_56_59 AM.png
+│       │   ├── ChatGPT Image Feb 11, 2026, 09_57_01 AM.png
+│       │   ├── ChatGPT Image Feb 11, 2026, 09_57_03 AM.png
+│       │   ├── ChatGPT_Image_Feb_10__2026__07_07_03_PM-removebg-preview.png
+│       │   ├── Pixelated_cloud_adventurer_in_a_blocky_world-removebg-preview.png
+│       │   └── Pixelated_cloud_in_a_bright_sky-removebg-preview.png
+│       ├── background/
+│       ├── characters/
+│       │   └── README.md
+│       ├── cursors/
+│       ├── icons/
+│       ├── logo/
+│       │   ├── aws cloudcraft logo.png
+│       │   ├── navlogo.png
+│       │   └── navlogo_2.jpeg
+│       ├── past-events/
+│       ├── team/
+│       ├── venue-house/
+│       ├── groupphoto.png
+│       ├── tobeannounced.jpg
+│       ├── tobeannounced.png
+│       └── tobeannounced_2.jpg
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   │       ├── AWS_SCD_images/
+│   │       ├── background/
+│   │       ├── characters/
+│   │       │   └── README.md
+│   │       ├── cursors/
+│   │       ├── icons/
+│   │       ├── logo/
+│   │       ├── past-events/
+│   │       ├── team/
+│   │       ├── venue-house/
+│   │       ├── groupphoto.png
+│   │       ├── tobeannounced.png
+│   │       └── tobeannounced_2.jpg
+│   ├── components/
+│   │   ├── about/
+│   │   │   ├── AboutSection.css
+│   │   │   └── AboutSection.jsx
+│   │   ├── agenda/
+│   │   │   ├── AgendaSection.css
+│   │   │   └── AgendaSection.jsx
+│   │   ├── community-journey/
+│   │   │   ├── CommunityJourneySection.css
+│   │   │   └── CommunityJourneySection.jsx
+│   │   ├── footer/
+│   │   │   ├── Footer.css
+│   │   │   └── Footer.jsx
+│   │   ├── hero/
+│   │   │   ├── HeroSection.css
+│   │   │   └── HeroSection.jsx
+│   │   ├── navbar/
+│   │   │   ├── Navbar.css
+│   │   │   └── Navbar.jsx
+│   │   ├── past-events/
+│   │   │   ├── PastEventsSection.css
+│   │   │   └── PastEventsSection.jsx
+│   │   ├── registration/
+│   │   │   ├── RegistrationSection.css
+│   │   │   └── RegistrationSection.jsx
+│   │   ├── speakers/
+│   │   │   ├── SpeakersSection.css
+│   │   │   └── SpeakersSection.jsx
+│   │   ├── sponsors/
+│   │   │   ├── SponsorsSection.css
+│   │   │   └── SponsorsSection.jsx
+│   │   ├── stats/
+│   │   │   ├── StatsSection.css
+│   │   │   └── StatsSection.jsx
+│   │   ├── team/
+│   │   │   ├── TeamSection.css
+│   │   │   └── TeamSection.jsx
+│   │   ├── tracks/
+│   │   │   ├── TracksSection.css
+│   │   │   └── TracksSection.jsx
+│   │   ├── venue/
+│   │   │   ├── pixelWorld.css
+│   │   │   ├── PixelWorld.jsx
+│   │   │   ├── VenueHouse360.css
+│   │   │   ├── VenueHouse360.jsx
+│   │   │   ├── VenueSection.css
+│   │   │   └── VenueSection.jsx
+│   │   └── workshops/
+│   │       ├── WorkshopsSection.css
+│   │       └── WorkshopsSection.jsx
+│   ├── styles/
+│   │   └── pixel-theme.css
+│   ├── utils/
+│   │   ├── landingBurst.js
+│   │   ├── pixelBurst.js
+│   │   └── useRevealObserver.js
+│   ├── App.css
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── PIXEL_THEME_REFERENCE.md
+├── PROJECT_README.md
+├── README.md
+└── vite.config.js
