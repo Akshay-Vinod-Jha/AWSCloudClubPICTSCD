@@ -1,0 +1,27 @@
+{
+  "name": "AWS Student Community Day Pune 2026",
+  "short_name": "AWS SCD Pune",
+  "description": "Join AWS Student Community Day Pune on April 4th, 2026 at Cloud 99 Banquet, Hinjawadi. Student-led cloud learning event featuring workshops, keynotes, AI/ML sessions, DevOps, Serverless computing, and networking opportunities.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#FF9900",
+  "background_color": "#232F3E",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/logo/aws-cloudcraft-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/logo/navlogo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["education", "events", "technology"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

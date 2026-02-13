@@ -17,7 +17,7 @@ import locationIcon from "../../assets/images/icons/location_pixel.jpg";
 import heroBackground from "../../assets/images/background/background_1.jpg";
 
 // Club logo
-import clubLogo from "../../assets/images/logo/aws cloudcraft logo.png";
+import clubLogo from "../../assets/images/logo/aws-cloudcraft-logo.png";
 
 const HeroSection = () => {
   const ctaBtnRef = useRef(null);
