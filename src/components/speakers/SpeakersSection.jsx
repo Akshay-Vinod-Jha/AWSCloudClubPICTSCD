@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./SpeakersSection.css";
+import { addPixelBurst } from "../../utils/pixelBurst";
 
 // Character imports - According to characters_info.txt
 // SpeakersSection uses:
@@ -15,7 +16,9 @@ import { triggerLandingBurst } from "../../utils/landingBurst";
 const SpeakersSection = () => {
   const sectionRef = useRef(null);
   const imgRef = useRef(null);
+  const speakBtnRef = useRef(null);
   const [dropped, setDropped] = useState(false);
+  const [sparklingBtn, setSparklingBtn] = useState(null);
 
   useEffect(() => {
     const sectionEl = sectionRef.current;
@@ -45,6 +48,32 @@ const SpeakersSection = () => {
     observer.observe(sectionEl);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (speakBtnRef.current) {
+      return addPixelBurst(speakBtnRef.current, cloudHelper);
+    }
+  }, []);
+
+  const handleSpeakClick = (e) => {
+    e.preventDefault();
+    const btn = e.currentTarget;
+
+    // Add sparkle animation
+    setSparklingBtn("speak");
+    btn.style.transition = "filter 0.3s ease";
+    btn.style.filter = "brightness(2) saturate(2)";
+
+    setTimeout(() => {
+      window.open(
+        "https://sessionize.com/aws-student-community-day-pune-2026",
+        "_blank",
+        "noopener,noreferrer",
+      );
+      btn.style.filter = "";
+      setSparklingBtn(null);
+    }, 600);
+  };
 
   const speakers = [
     {
@@ -112,6 +141,18 @@ const SpeakersSection = () => {
               dropped ? " pixel-drop-landed" : " pixel-drop-ready"
             }`}
           />
+
+          {/* Want to Speak Button */}
+          <div className="speakers-cta-wrapper">
+            <button
+              ref={speakBtnRef}
+              className={`speakers-cta-button ${sparklingBtn === "speak" ? "speakers-sparkle-animate" : ""}`}
+              type="button"
+              onClick={handleSpeakClick}
+            >
+              Want to Speak at SCD Pune 2026?
+            </button>
+          </div>
         </div>
 
         {/* Original speakers grid - hidden for now

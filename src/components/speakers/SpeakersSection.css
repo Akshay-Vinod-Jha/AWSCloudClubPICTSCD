@@ -237,6 +237,11 @@ Speaker showcase / Character selection area
   .photo-icon {
     font-size: 3.5rem;
   }
+
+  .speakers-cta-button {
+    font-size: 0.85rem;
+    padding: 18px 36px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -293,21 +298,98 @@ Speaker showcase / Character selection area
     right: 15px;
     width: 50px;
   }
+
+  .speakers-cta-button {
+    font-size: 0.7rem;
+    padding: 16px 28px;
+    box-shadow: 6px 6px 0 var(--pixel-black);
+  }
+
+  .speakers-cta-button:hover {
+    box-shadow: 8px 8px 0 var(--pixel-black);
+  }
 }
 
 /* To Be Announced */
 .speakers-tba-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 40px 0;
+  gap: 40px;
 }
 
 .speakers-tba-image {
   max-width: 600px;
   width: 60%;
   height: auto;
+}
+
+/* ===== CTA Button ===== */
+.speakers-cta-wrapper {
+  padding: 8px 0;
+}
+
+.speakers-cta-button {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  padding: 22px 42px;
+  background-color: #ffd93d;
+  color: var(--pixel-black);
+  border: 6px solid var(--pixel-black);
+  box-shadow: 8px 8px 0 var(--pixel-black);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  cursor: url("../../assets/images/cursors/cursor_interact.png"), pointer;
+  animation: pixelShake 2s steps(4) infinite;
+}
+
+.speakers-cta-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0 var(--pixel-black);
+  animation: pixelShakeHover 1.5s steps(4) infinite;
+}
+
+.speakers-cta-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 6px 6px 0 var(--pixel-black);
+  animation: none;
+}
+
+/* ===== Pixel Shake Animation ===== */
+@keyframes pixelShake {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(-3px, 2px) rotate(-2deg);
+  }
+  50% {
+    transform: translate(3px, -2px) rotate(2deg);
+  }
+  75% {
+    transform: translate(-2px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes pixelShakeHover {
+  0%,
+  100% {
+    transform: translate(-2px, -2px) rotate(0deg);
+  }
+  25% {
+    transform: translate(-5px, 0px) rotate(-2deg);
+  }
+  50% {
+    transform: translate(1px, -4px) rotate(2deg);
+  }
+  75% {
+    transform: translate(-4px, -4px) rotate(-1deg);
+  }
 }
 
 /* ========================================
@@ -385,3 +467,41 @@ Speaker showcase / Character selection area
     transform: translateY(0px);
   }
 }
+
+/* ========================================
+   SPARKLE ANIMATION ON BUTTON CLICK
+   ======================================== */
+
+.speakers-sparkle-animate {
+  animation: speakersButtonSparkle 0.6s ease-out forwards;
+}
+
+@keyframes speakersButtonSparkle {
+  0% {
+    box-shadow:
+      6px 6px 0 var(--pixel-black),
+      0 0 0 rgba(255, 215, 0, 0.8),
+      -8px -8px 0 rgba(255, 215, 0, 0.6),
+      8px -8px 0 rgba(255, 215, 0, 0.6),
+      -8px 8px 0 rgba(255, 215, 0, 0.6),
+      8px 8px 0 rgba(255, 215, 0, 0.6);
+  }
+  50% {
+    box-shadow:
+      6px 6px 0 var(--pixel-black),
+      0 0 15px rgba(255, 215, 0, 1),
+      -12px -12px 0 rgba(255, 215, 0, 0.8),
+      12px -12px 0 rgba(255, 215, 0, 0.8),
+      -12px 12px 0 rgba(255, 215, 0, 0.8),
+      12px 12px 0 rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    box-shadow:
+      6px 6px 0 var(--pixel-black),
+      0 0 0 rgba(255, 215, 0, 0);
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
