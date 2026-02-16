@@ -239,8 +239,9 @@ Speaker showcase / Character selection area
   }
 
   .speakers-cta-button {
-    font-size: 0.85rem;
-    padding: 18px 36px;
+    font-size: 0.75rem;
+    padding: 18px 32px;
+    white-space: nowrap;
   }
 }
 
@@ -300,13 +301,41 @@ Speaker showcase / Character selection area
   }
 
   .speakers-cta-button {
-    font-size: 0.7rem;
-    padding: 16px 28px;
-    box-shadow: 6px 6px 0 var(--pixel-black);
+    font-size: 0.6rem;
+    padding: 12px 16px;
+    box-shadow: 4px 4px 0 var(--pixel-black);
+    white-space: nowrap;
+    letter-spacing: 1px;
   }
 
   .speakers-cta-button:hover {
-    box-shadow: 8px 8px 0 var(--pixel-black);
+    box-shadow: 6px 6px 0 var(--pixel-black);
+  }
+}
+
+@media (max-width: 480px) {
+  .speakers-cta-button {
+    font-size: 0.55rem;
+    padding: 10px 14px;
+    box-shadow: 4px 4px 0 var(--pixel-black);
+    letter-spacing: 0.5px;
+  }
+
+  .speakers-cta-button:hover {
+    box-shadow: 5px 5px 0 var(--pixel-black);
+  }
+}
+
+@media (max-width: 390px) {
+  .speakers-cta-button {
+    font-size: 0.5rem;
+    padding: 10px 12px;
+    box-shadow: 3px 3px 0 var(--pixel-black);
+    letter-spacing: 0px;
+  }
+
+  .speakers-cta-button:hover {
+    box-shadow: 4px 4px 0 var(--pixel-black);
   }
 }
 

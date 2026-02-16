@@ -19,6 +19,18 @@ const SpeakersSection = () => {
   const speakBtnRef = useRef(null);
   const [dropped, setDropped] = useState(false);
   const [sparklingBtn, setSparklingBtn] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 640);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
     const sectionEl = sectionRef.current;
@@ -150,7 +162,7 @@ const SpeakersSection = () => {
               type="button"
               onClick={handleSpeakClick}
             >
-              Want to Speak at SCD Pune 2026?
+              {isMobile ? "Want to Speak?" : "Want to Speak at SCD Pune 2026?"}
             </button>
           </div>
         </div>
