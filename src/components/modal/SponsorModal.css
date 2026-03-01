@@ -31,7 +31,7 @@ Minecraft-style modal popup for sponsorship
   width: 100%;
   position: relative;
   padding: 40px 30px 30px;
-  animation: modalShake 0.5s steps(6) infinite;
+  animation: modalShake 4s steps(6) infinite;
 }
 
 /* Shake Animation */
