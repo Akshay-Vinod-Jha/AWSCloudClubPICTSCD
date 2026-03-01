@@ -8,11 +8,18 @@ import cloudHelper from "../../assets/images/characters/cloud_helper.png";
 
 const Navbar = () => {
   const registerBtnRef = useRef(null);
+  const sponsorBtnRef = useRef(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     if (registerBtnRef.current) {
       return addPixelBurst(registerBtnRef.current, cloudHelper);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (sponsorBtnRef.current) {
+      return addPixelBurst(sponsorBtnRef.current, cloudHelper);
     }
   }, []);
 
@@ -69,6 +76,27 @@ const Navbar = () => {
         "_blank",
         "noopener,noreferrer",
       );
+      btn.style.filter = "";
+    }, 600);
+    setMobileMenuOpen(false);
+  };
+
+  // Handle sponsorship button click
+  const handleSponsorshipClick = (e) => {
+    e.preventDefault();
+    // Add bright flash animation
+    const btn = e.currentTarget;
+    btn.style.transition = "filter 0.3s ease";
+    btn.style.filter = "brightness(2) saturate(2)";
+
+    // Wait for animation then download PDF
+    setTimeout(() => {
+      const link = document.createElement("a");
+      link.href =
+        "/AWS_Student_Community_Day_Pune_2026_Sponsorship_Brochure.pdf";
+      link.download =
+        "AWS_Student_Community_Day_Pune_2026_Sponsorship_Brochure.pdf";
+      link.click();
       btn.style.filter = "";
     }, 600);
     setMobileMenuOpen(false);
@@ -158,7 +186,7 @@ const Navbar = () => {
               Sponsors
             </a>
           </li>
-          
+
           <li className="navbar-item">
             <a
               href="#connect"
@@ -176,10 +204,25 @@ const Navbar = () => {
               Register
             </button>
           </li>
+          <li className="navbar-item mobile-sponsor">
+            <button
+              className="pixel-button navbar-sponsor-btn mobile-sponsor-btn"
+              onClick={handleSponsorshipClick}
+            >
+              Sponsorship
+            </button>
+          </li>
         </ul>
 
-        {/* Right: Primary CTA */}
+        {/* Right: Primary CTA Buttons */}
         <div className="navbar-cta">
+          <button
+            ref={sponsorBtnRef}
+            className="pixel-button navbar-sponsor-btn"
+            onClick={handleSponsorshipClick}
+          >
+            Sponsorship
+          </button>
           <button
             ref={registerBtnRef}
             className="pixel-button navbar-register-btn"

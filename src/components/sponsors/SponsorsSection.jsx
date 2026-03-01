@@ -9,13 +9,17 @@ import cloudHelper from "../../assets/images/characters/cloud_helper.png";
 import cloudBird from "../../assets/images/characters/cloud_bird.png";
 import cloudBuilder from "../../assets/images/characters/cloud_builder.png";
 import cloudSleep from "../../assets/images/characters/cloud_sleep.png";
-import toBeAnnounced from "../../assets/images/tobeannounced.png";
 import { triggerLandingBurst } from "../../utils/landingBurst";
+import { addPixelBurst } from "../../utils/pixelBurst";
+
+// Import PDF from both locations for deployment safety
+import sponsorshipPDF from "../../assets/pdfs/AWS_Student_Community_Day_Pune_2026_Sponsorship_Brochure.pdf";
 
 const SponsorsSection = () => {
   const sectionRef = useRef(null);
-  const imgRef = useRef(null);
-  const [dropped, setDropped] = useState(false);
+  const pdfContainerRef = useRef(null);
+  const downloadBtnRef = useRef(null);
+  const [revealed, setRevealed] = useState(false);
 
   useEffect(() => {
     const sectionEl = sectionRef.current;
@@ -24,27 +28,31 @@ const SponsorsSection = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setDropped(true);
-          // Fire cloud burst after drop (700ms) + vibrate (300ms)
-          setTimeout(() => {
-            if (imgRef.current) {
-              triggerLandingBurst(imgRef.current, [
-                cloudHelper,
-                cloudBird,
-                cloudBuilder,
-                cloudSleep,
-              ]);
-            }
-          }, 1000);
+          setRevealed(true);
           observer.disconnect();
         }
       },
-      { threshold: 0.4 },
+      { threshold: 0.3 },
     );
 
     observer.observe(sectionEl);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    if (downloadBtnRef.current) {
+      return addPixelBurst(downloadBtnRef.current, cloudHelper);
+    }
+  }, []);
+
+  const handleDownloadClick = () => {
+    // Use public folder PDF for download
+    const link = document.createElement("a");
+    link.href = "/AWS_Student_Community_Day_Pune_2026_Sponsorship_Brochure.pdf";
+    link.download =
+      "AWS_Student_Community_Day_Pune_2026_Sponsorship_Brochure.pdf";
+    link.click();
+  };
 
   const sponsorTiers = [
     {
@@ -100,20 +108,39 @@ const SponsorsSection = () => {
       <div className="sponsors-container">
         {/* Section Heading */}
         <div className="sponsors-header">
-          <h2 className="sponsors-title">Our Sponsors & Partners</h2>
+          <h2 className="sponsors-title">Partner With Us</h2>
           <p className="sponsors-subtitle">Built with Community Support</p>
         </div>
 
-        {/* Sponsors - To Be Announced */}
-        <div className="sponsors-tba-container">
-          <img
-            ref={imgRef}
-            src={toBeAnnounced}
-            alt="Sponsors to be announced"
-            className={`sponsors-tba-image pixel-crisp${
-              dropped ? " pixel-drop-landed" : " pixel-drop-ready"
-            }`}
+        {/* PDF Instruction Text */}
+        <div
+          className={`sponsors-instruction-text reveal reveal--fade ${revealed ? "is-visible" : ""}`}
+        >
+          <p>Download our sponsorship prospectus or preview it below.</p>
+        </div>
+
+        {/* PDF Viewer */}
+        <div
+          ref={pdfContainerRef}
+          className={`sponsors-pdf-viewer reveal reveal--tile ${revealed ? "is-visible" : ""}`}
+          style={{ animationDelay: "200ms" }}
+        >
+          <iframe
+            src={sponsorshipPDF}
+            title="Sponsorship Prospectus"
+            className="pdf-iframe"
           />
+        </div>
+
+        {/* Download Button */}
+        <div className="sponsors-download-wrapper">
+          <button
+            ref={downloadBtnRef}
+            className="pixel-button sponsors-download-btn"
+            onClick={handleDownloadClick}
+          >
+            Download Sponsorship Prospectus
+          </button>
         </div>
 
         {/* Original sponsor tiers - hidden for now
@@ -146,7 +173,7 @@ const SponsorsSection = () => {
 
         {/* Support Message */}
         <div className="sponsors-footer-message">
-          <p>▶ Interested in sponsoring? Contact us at awscloudclubpict@gmail.com!</p>
+          <p>▶ Interested in sponsoring? Contact us at team@awsugpune.org!</p>
         </div>
       </div>
     </section>

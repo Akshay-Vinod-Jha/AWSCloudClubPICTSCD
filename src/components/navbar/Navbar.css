@@ -99,6 +99,9 @@ Game menu bar / HUD style navigation
 /* CTA Button Section */
 .navbar-cta {
   flex-shrink: 0;
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }
 
 .navbar-register-btn {
@@ -119,6 +122,29 @@ Game menu bar / HUD style navigation
 }
 
 .navbar-register-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--pixel-black);
+}
+
+.navbar-sponsor-btn {
+  font-size: 0.7rem;
+  padding: 10px 20px;
+  background-color: var(--pixel-grass);
+  color: var(--pixel-white);
+  border: 3px solid var(--pixel-black);
+  box-shadow: 4px 4px 0 var(--pixel-black);
+  text-shadow: 2px 2px 0 var(--pixel-black);
+  transition:
+    transform 100ms steps(2),
+    box-shadow 100ms steps(2),
+    background-color 100ms steps(2);
+}
+
+.navbar-sponsor-btn:hover {
+  background-color: var(--button-primary-dark);
+}
+
+.navbar-sponsor-btn:active {
   transform: translate(4px, 4px);
   box-shadow: 0 0 0 var(--pixel-black);
 }
@@ -164,6 +190,10 @@ Game menu bar / HUD style navigation
   display: none;
 }
 
+.mobile-sponsor {
+  display: none;
+}
+
 /* Responsive Behavior */
 @media (max-width: 1024px) {
   .navbar-container {
@@ -185,6 +215,11 @@ Game menu bar / HUD style navigation
   }
 
   .navbar-register-btn {
+    font-size: 0.55rem;
+    padding: 8px 14px;
+  }
+
+  .navbar-sponsor-btn {
     font-size: 0.55rem;
     padding: 8px 14px;
   }
@@ -219,6 +254,11 @@ Game menu bar / HUD style navigation
   }
 
   .navbar-register-btn {
+    font-size: 0.5rem;
+    padding: 8px 10px;
+  }
+
+  .navbar-sponsor-btn {
     font-size: 0.5rem;
     padding: 8px 10px;
   }
@@ -303,6 +343,19 @@ Game menu bar / HUD style navigation
   }
 
   .mobile-register-btn {
+    width: 100%;
+    font-size: 0.65rem;
+    padding: 12px 16px;
+  }
+
+  /* Show mobile sponsor button in menu */
+  .mobile-sponsor {
+    display: block;
+    padding: 16px 24px;
+    border-bottom: none;
+  }
+
+  .mobile-sponsor-btn {
     width: 100%;
     font-size: 0.65rem;
     padding: 12px 16px;
