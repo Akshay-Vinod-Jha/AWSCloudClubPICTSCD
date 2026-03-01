@@ -173,7 +173,10 @@ const SponsorsSection = () => {
 
         {/* Support Message */}
         <div className="sponsors-footer-message">
-          <p>▶ Interested in sponsoring? Contact us at team@awsugpune.org!</p>
+          <p>
+            ▶ Interested in sponsoring? Contact us at
+            awscloudclubpict@gmail.com!
+          </p>
         </div>
       </div>
     </section>
