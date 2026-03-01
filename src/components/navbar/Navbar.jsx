@@ -221,7 +221,7 @@ const Navbar = () => {
             className="pixel-button navbar-sponsor-btn"
             onClick={handleSponsorshipClick}
           >
-            Sponsorship
+            Sponsor Us
           </button>
           <button
             ref={registerBtnRef}
