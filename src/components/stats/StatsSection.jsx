@@ -4,7 +4,7 @@ import "./StatsSection.css";
 // Character imports - According to characters_info.txt
 // StatsSection uses:
 // - cloud_eagle_warrior.png: Warrior/Strength symbol representing scale & impact
-import cloudEagleWarrior from "../../assets/images/characters/cloud_eagle_warrior.png";
+const cloudEagleWarrior = "/images/characters/cloud_eagle_warrior.png";
 
 const StatsSection = () => {
   const stats = [

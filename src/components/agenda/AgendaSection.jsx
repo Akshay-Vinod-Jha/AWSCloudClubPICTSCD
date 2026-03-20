@@ -1,12 +1,9 @@
 import React from "react";
 import "./AgendaSection.css";
 
-// Character imports - According to characters_info.txt
-// AgendaSection uses:
-// - workshop_guide_npc.png: Guide/instructor NPC anchoring the timeline
-// - cloud_helper.png: Assistant/pointer for visual flow
-import workshopGuide from "../../assets/images/characters/workshop_guide__npc.png";
-import cloudHelper from "../../assets/images/characters/cloud_helper.png";
+// Character imports
+const workshopGuide = "/images/characters/workshop_guide__npc.png";
+const cloudHelper = "/images/characters/cloud_helper.png";
 
 const AgendaSection = () => {
   const agendaItems = [
@@ -50,7 +47,7 @@ const AgendaSection = () => {
       title: "Serverless ARC",
       subtitle: "Serverless computing in the cloud",
     },
-      {
+    {
       time: "14:30",
       title: "Activity",
       subtitle: "Interactive Activity",
@@ -60,7 +57,7 @@ const AgendaSection = () => {
       title: "Lightning Talks",
       subtitle: "Quick presentations from community members",
     },
-     {
+    {
       time: "15:30",
       title: "Fireside Chat with cloud captains",
       subtitle: "Informal discussion with cloud leaders and closing remarks",

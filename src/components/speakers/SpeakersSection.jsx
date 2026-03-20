@@ -2,15 +2,12 @@ import React, { useRef, useEffect, useState } from "react";
 import "./SpeakersSection.css";
 import { addPixelBurst } from "../../utils/pixelBurst";
 
-// Character imports - According to characters_info.txt
-// SpeakersSection uses:
-// - cloud_helper.png: Friendly guide as floating accent
-// - cloud_sleep.png: Decorative life element (subtle)
-import cloudHelper from "../../assets/images/characters/cloud_helper.png";
-import cloudSleep from "../../assets/images/characters/cloud_sleep.png";
-import cloudBird from "../../assets/images/characters/cloud_bird.png";
-import cloudBuilder from "../../assets/images/characters/cloud_builder.png";
-import toBeAnnounced from "../../assets/images/tobeannounced.png";
+// Character imports
+const cloudHelper = "/images/characters/cloud_helper.png";
+const cloudSleep = "/images/characters/cloud_sleep.png";
+const cloudBird = "/images/characters/cloud_bird.png";
+const cloudBuilder = "/images/characters/cloud_builder.png";
+const toBeAnnounced = "/images/tobeannounced.png";
 import { triggerLandingBurst } from "../../utils/landingBurst";
 
 const SpeakersSection = () => {

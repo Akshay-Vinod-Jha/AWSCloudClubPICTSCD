@@ -2,10 +2,10 @@ import React from "react";
 import "./PastEventsSection.css";
 
 // Event thumbnail imports
-import event01 from "../../assets/images/past-events/event_01.jpg";
-import event02 from "../../assets/images/past-events/event_02.jpg";
-import event03 from "../../assets/images/past-events/event_03.jpg";
-import event04 from "../../assets/images/past-events/event_04.jpg";
+const event01 = "/images/past-events/event_01.jpg";
+const event02 = "/images/past-events/event_02.jpg";
+const event03 = "/images/past-events/event_03.jpg";
+const event04 = "/images/past-events/event_04.jpg";
 
 const pastEvents = [
   {

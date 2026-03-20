@@ -9,6 +9,7 @@ import WorkshopsSection from "./components/workshops/WorkshopsSection";
 import SpeakersSection from "./components/speakers/SpeakersSection";
 import VenueSection from "./components/venue/VenueSection";
 import SponsorsSection from "./components/sponsors/SponsorsSection";
+import BadgeSection from "./components/badge/BadgeSection";
 import CommunityJourneySection from "./components/community-journey/CommunityJourneySection";
 import TeamSection from "./components/team/TeamSection";
 import PastEventsSection from "./components/past-events/PastEventsSection";
@@ -62,6 +63,9 @@ function App() {
       </div>
       <div id="sponsors">
         <SponsorsSection />
+      </div>
+      <div id="badge">
+        <BadgeSection />
       </div>
       <div id="register">
         <RegistrationSection />

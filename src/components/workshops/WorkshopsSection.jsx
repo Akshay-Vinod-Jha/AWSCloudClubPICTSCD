@@ -5,8 +5,8 @@ import "./WorkshopsSection.css";
 // WorkshopsSection uses:
 // - workshop_guide_npc.png: Instructor/mentor NPC anchor
 // - cloud_helper.png: Assistant/helper decorative accents
-import workshopGuide from "../../assets/images/characters/workshop_guide__npc.png";
-import cloudHelper from "../../assets/images/characters/cloud_helper.png";
+const workshopGuide = "/images/characters/workshop_guide__npc.png";
+const cloudHelper = "/images/characters/cloud_helper.png";
 
 const WorkshopsSection = () => {
   const workshops = [

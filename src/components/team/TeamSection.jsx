@@ -2,12 +2,12 @@ import React from "react";
 import "./TeamSection.css";
 
 // Pixel avatar imports
-import avatar01 from "../../assets/images/team/avatar_01.jpg";
-import avatar02 from "../../assets/images/team/avatar_02.jpg";
-import avatar03 from "../../assets/images/team/avatar_03.jpg";
-import avatar04 from "../../assets/images/team/avatar_04.jpg";
-import avatar05 from "../../assets/images/team/avatar_05.jpg";
-import avatar06 from "../../assets/images/team/avatar_06.jpg";
+const avatar01 = "/images/team/avatar_01.jpg";
+const avatar02 = "/images/team/avatar_02.jpg";
+const avatar03 = "/images/team/avatar_03.jpg";
+const avatar04 = "/images/team/avatar_04.jpg";
+const avatar05 = "/images/team/avatar_05.jpg";
+const avatar06 = "/images/team/avatar_06.jpg";
 
 const teamMembers = [
   {

@@ -5,7 +5,7 @@ import "./AboutSection.css";
 // AboutSection uses:
 // - student_explorer.png: Student Participant Character (main)
 // - cloud_jadugar.png: Magical companion (decorative accent)
-import studentExplorer from "../../assets/images/characters/student_explorer.png";
+const studentExplorer = "/images/characters/student_explorer.png";
 
 const AboutSection = () => {
   return (

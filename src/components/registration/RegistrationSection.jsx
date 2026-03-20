@@ -3,9 +3,9 @@ import "./RegistrationSection.css";
 import { addPixelBurst } from "../../utils/pixelBurst";
 
 // Character imports
-import scdMascot from "../../assets/images/characters/scd_event_mascot.png";
-import cloudBuilder from "../../assets/images/characters/cloud_helmet_warrior.png";
-import cloudHelper from "../../assets/images/characters/cloud_helper.png";
+const scdMascot = "/images/characters/scd_event_mascot.png";
+const cloudBuilder = "/images/characters/cloud_helmet_warrior.png";
+const cloudHelper = "/images/characters/cloud_helper.png";
 
 // Background image (applied via CSS — pixel_final_cta_bg.jpg)
 
@@ -30,7 +30,7 @@ const RegistrationSection = () => {
   const handleRegisterClick = (e) => {
     e.preventDefault();
     const btn = e.currentTarget;
-    
+
     // Add sparkle animation
     setSparklingBtn("register");
     btn.style.transition = "filter 0.3s ease";

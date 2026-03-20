@@ -1,18 +1,15 @@
 import React from "react";
 import "./TracksSection.css";
 
-// Character imports - According to characters_info.txt
-// TracksSection uses:
-// - cloud_explorer.png: Explorer/progression character (main)
-// - cloud_bird.png: Motion/exploration accent (small floating)
-import cloudExplorer from "../../assets/images/characters/cloud_explorer.png";
-import cloudBird from "../../assets/images/characters/cloud_bird.png";
+// Character imports
+const cloudExplorer = "/images/characters/cloud_explorer.png";
+const cloudBird = "/images/characters/cloud_bird.png";
 
 // Track icon imports - Pixel art icons
-import cloudTrackIcon from "../../assets/images/icons/cloud_track_icon.jpg";
-import computeTrackIcon from "../../assets/images/icons/compute_track_icon.jpg";
-import devopsTrackIcon from "../../assets/images/icons/devops_track_icon.jpg";
-import aiTrackIcon from "../../assets/images/icons/ai_track_icon.jpg";
+const cloudTrackIcon = "/images/icons/cloud_track_icon.jpg";
+const computeTrackIcon = "/images/icons/compute_track_icon.jpg";
+const devopsTrackIcon = "/images/icons/devops_track_icon.jpg";
+const aiTrackIcon = "/images/icons/ai_track_icon.jpg";
 
 const TracksSection = () => {
   const tracks = [

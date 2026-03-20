@@ -3,8 +3,8 @@ import "./Navbar.css";
 import { addPixelBurst } from "../../utils/pixelBurst";
 
 // Brand logo
-import awsCloudcraftLogo from "../../assets/images/logo/navlogo.png";
-import cloudHelper from "../../assets/images/characters/cloud_helper.png";
+const awsCloudcraftLogo = "/images/logo/navlogo.png";
+const cloudHelper = "/images/characters/cloud_helper.png";
 
 const Navbar = () => {
   const registerBtnRef = useRef(null);
@@ -184,6 +184,15 @@ const Navbar = () => {
               onClick={(e) => scrollToSection(e, "sponsors")}
             >
               Sponsors
+            </a>
+          </li>
+          <li className="navbar-item">
+            <a
+              href="#badge"
+              className="navbar-link"
+              onClick={(e) => scrollToSection(e, "badge")}
+            >
+              Badge
             </a>
           </li>
 

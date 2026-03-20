@@ -5,9 +5,9 @@ import "./VenueSection.css";
 // VenueSection uses:
 // - cloud_explorer.png: Explorer/traveler representing journey to venue
 // - cloud_bird.png: Environment life element for depth
-import cloudExplorer from "../../assets/images/characters/cloud_explorer.png";
-import cloudBird from "../../assets/images/characters/cloud_bird.png";
-import groupPhoto from "../../assets/images/groupphoto.png";
+const cloudExplorer = "/images/characters/cloud_explorer.png";
+const cloudBird = "/images/characters/cloud_bird.png";
+const groupPhoto = "/images/groupphoto.png";
 
 const VenueSection = () => {
   const sectionRef = useRef(null);

@@ -2,8 +2,8 @@ import React, { useRef, useState, useEffect } from "react";
 import "./CommunityJourneySection.css";
 
 // Character imports
-import cloudExplorer from "../../assets/images/characters/cloud_explorer.png";
-import cloudHelmetWarrior from "../../assets/images/characters/cloud_helmet_warrior.png";
+const cloudExplorer = "/images/characters/cloud_explorer.png";
+const cloudHelmetWarrior = "/images/characters/cloud_helmet_warrior.png";
 
 // Background image (applied via CSS)
 

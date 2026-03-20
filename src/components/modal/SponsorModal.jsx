@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "./SponsorModal.css";
 import { addPixelBurst } from "../../utils/pixelBurst";
-import cloudHelper from "../../assets/images/characters/cloud_helper.png";
+const cloudHelper = "/images/characters/cloud_helper.png";
 
 const SponsorModal = ({ isOpen, onClose }) => {
   const downloadBtnRef = useRef(null);

@@ -2,22 +2,19 @@ import React, { useEffect, useRef } from "react";
 import "./HeroSection.css";
 import { addPixelBurst } from "../../utils/pixelBurst";
 
-// Character imports - According to characters_info.txt semantic rules
-// Hero Section uses:
-// - cloud_builder.png: Primary Builder Mascot (main hero character)
-// - cloud_helper.png: Helper/Companion Mob (floating support near CTA)
-import cloudBuilder from "../../assets/images/characters/cloud_builder.png";
-import cloudHelper from "../../assets/images/characters/cloud_helper.png";
+// Character imports
+const cloudBuilder = "/images/characters/cloud_builder.png";
+const cloudHelper = "/images/characters/cloud_helper.png";
 
 // Pixel icon imports
-import calendarIcon from "../../assets/images/icons/calendar_pixel.jpg";
-import locationIcon from "../../assets/images/icons/location_pixel.jpg";
+const calendarIcon = "/images/icons/calendar_pixel.jpg";
+const locationIcon = "/images/icons/location_pixel.jpg";
 
 // Background image
-import heroBackground from "../../assets/images/background/background_1.jpg";
+const heroBackground = "/images/background/background_1.jpg";
 
 // Club logo
-import clubLogo from "../../assets/images/logo/aws-cloudcraft-logo.png";
+const clubLogo = "/images/logo/aws-cloudcraft-logo.png";
 
 const HeroSection = () => {
   const ctaBtnRef = useRef(null);

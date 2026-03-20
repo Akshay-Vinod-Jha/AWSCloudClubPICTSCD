@@ -2,22 +2,22 @@ import React, { useRef, useCallback, useState } from "react";
 import "./VenueHouse360.css";
 
 // 16 house angle imports (every 22.5°)
-import house000 from "../../assets/images/venue-house/house_000.jpg";
-import house022 from "../../assets/images/venue-house/house_022.jpg";
-import house045 from "../../assets/images/venue-house/house_045.jpg";
-import house067 from "../../assets/images/venue-house/house_067.jpg";
-import house090 from "../../assets/images/venue-house/house_090.jpg";
-import house112 from "../../assets/images/venue-house/house_112.jpg";
-import house135 from "../../assets/images/venue-house/house_135.jpg";
-import house157 from "../../assets/images/venue-house/house_157.jpg";
-import house180 from "../../assets/images/venue-house/house_180.jpg";
-import house202 from "../../assets/images/venue-house/house_202.jpg";
-import house225 from "../../assets/images/venue-house/house_225.jpg";
-import house247 from "../../assets/images/venue-house/house_247.jpg";
-import house270 from "../../assets/images/venue-house/house_270.jpg";
-import house292 from "../../assets/images/venue-house/house_292.jpg";
-import house315 from "../../assets/images/venue-house/house_315.jpg";
-import house337 from "../../assets/images/venue-house/house_337.jpg";
+const house000 = "/images/venue-house/house_000.jpg";
+const house022 = "/images/venue-house/house_022.jpg";
+const house045 = "/images/venue-house/house_045.jpg";
+const house067 = "/images/venue-house/house_067.jpg";
+const house090 = "/images/venue-house/house_090.jpg";
+const house112 = "/images/venue-house/house_112.jpg";
+const house135 = "/images/venue-house/house_135.jpg";
+const house157 = "/images/venue-house/house_157.jpg";
+const house180 = "/images/venue-house/house_180.jpg";
+const house202 = "/images/venue-house/house_202.jpg";
+const house225 = "/images/venue-house/house_225.jpg";
+const house247 = "/images/venue-house/house_247.jpg";
+const house270 = "/images/venue-house/house_270.jpg";
+const house292 = "/images/venue-house/house_292.jpg";
+const house315 = "/images/venue-house/house_315.jpg";
+const house337 = "/images/venue-house/house_337.jpg";
 
 const FRAMES = [
   house000,
