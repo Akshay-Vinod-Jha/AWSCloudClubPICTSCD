@@ -81,8 +81,8 @@ Pixel-themed badge customization with photo upload
 .badge-subtitle {
   font-family: "Press Start 2P", cursive;
   font-size: 1rem;
-  color: var(--pixel-sky-light);
-  text-shadow: 2px 2px 0 var(--pixel-black);
+  color: var(--pixel-white);
+  text-shadow: 4px 4px 0 var(--pixel-black);
   text-transform: uppercase;
   margin: 0;
 }

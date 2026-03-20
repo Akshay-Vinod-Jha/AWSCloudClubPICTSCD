@@ -13,6 +13,7 @@ const awsLogo = "/images/partner/Amazon_Web_Services_Logo.png";
 const konfhubLogo = "/images/partner/konfhub.png";
 const cncfnashikLogo = "/images/partner/cncfnashik.png";
 const pictOssLogo = "/images/partner/pict_oss_community_logo.png";
+const awsUserGroupPuneLogo = "/images/partner/aws_user_group_pune.png";
 
 const SponsorsSection = () => {
   const sectionRef = useRef(null);
@@ -50,6 +51,10 @@ const SponsorsSection = () => {
         {
           name: "PICT OSS",
           logo: pictOssLogo,
+        },
+        {
+          name: "AWS User Group Pune",
+          logo: awsUserGroupPuneLogo,
         },
       ],
     },
