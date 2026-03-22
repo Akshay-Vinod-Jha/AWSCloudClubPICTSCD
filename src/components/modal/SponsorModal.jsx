@@ -12,12 +12,15 @@ const SponsorModal = ({ isOpen, onClose }) => {
     }
   }, [isOpen]);
 
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/AWS_Student_Community_Day_Pune_2026_Sponsorship_Brochure.pdf";
-    link.download =
-      "AWS_Student_Community_Day_Pune_2026_Sponsorship_Brochure.pdf";
-    link.click();
+  const handleDownloadBadge = () => {
+    onClose();
+    // Scroll to badge section smoothly
+    setTimeout(() => {
+      const badgeSection = document.getElementById("badge");
+      if (badgeSection) {
+        badgeSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 300);
   };
 
   if (!isOpen) return null;
@@ -40,15 +43,17 @@ const SponsorModal = ({ isOpen, onClose }) => {
             alt="Cloud Helper"
             className="sponsor-modal-mascot pixel-crisp pixel-float"
           />
-          <h2 className="sponsor-modal-title">Sponsor Us!</h2>
+          <h2 className="sponsor-modal-title">Get Your Badge!</h2>
         </div>
 
         {/* Modal Body */}
         <div className="sponsor-modal-body">
           <p className="sponsor-modal-text">
-            Want to sponsor us? Contact us on
+            Create your personalized AWS SCD badge and make it your own!
           </p>
-          <p className="sponsor-modal-email">awscloudclubpict@gmail.com</p>
+          <p className="sponsor-modal-email">
+            Upload your photo and download your digital badge
+          </p>
         </div>
 
         {/* Modal Footer */}
@@ -56,9 +61,9 @@ const SponsorModal = ({ isOpen, onClose }) => {
           <button
             ref={downloadBtnRef}
             className="pixel-button sponsor-modal-download-btn"
-            onClick={handleDownload}
+            onClick={handleDownloadBadge}
           >
-            Download the Sponsorship Deck
+            Download Your Badge
           </button>
         </div>
       </div>
