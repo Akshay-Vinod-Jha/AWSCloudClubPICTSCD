@@ -11,72 +11,86 @@ const AgendaSection = () => {
       time: "08:00",
       title: "Registration & Welcome",
       subtitle: "Check-in and morning coffee",
+      speaker: null,
     },
     {
       time: "09:00",
       title: "Opening Keynote",
       subtitle: "Cloud computing in education",
+      speaker: null,
     },
     {
       time: "09:30",
       title: "Panel Discussion",
       subtitle: "Discussing the future of cloud in learning",
+      speaker: null,
     },
     {
       time: "10:00",
       title: "Roadmap to Golden Jacket and Certifications  move to First",
       subtitle: "Abhinivesh Jain",
+      speaker: "Abhinivesh Jain",
     },
     {
       time: "10:30",
       title:
         "Engineering for Efficiency: How Enterprise  Architects Drive Cost Optimized Architecture on  AWS",
       subtitle: "Anand Mehta",
+      speaker: "Anand Mehta",
     },
     {
       time: "11:00",
       title: "Getting Started with Spec-Driven Development  on AWS with Kiro",
       subtitle: "Sankalp Sandeep Paranjpe",
+      speaker: "Sankalp Sandeep Paranjpe",
     },
     {
       time: "11:30",
       title: "Amazon QuickSuit ",
       subtitle: "Saurabh Agrawal",
+      speaker: "Saurabh Agrawal",
     },
     {
       time: "12:00",
       title: "Lunch Break",
       subtitle: "Networking and refreshments provided",
+      speaker: null,
     },
     {
       time: "13:00",
       title: "Intelligent Event Agent",
       subtitle: "Ramandeep Chandna",
+      speaker: "Ramandeep Chandna",
     },
     {
       time: "13:30",
       title: "Scaling Kubernetes on AWS: Smart Autoscaling  with Karpenter",
       subtitle: "Akshay Ithape",
+      speaker: "Akshay Ithape",
     },
     {
       time: "14:00",
       title: "Designing Scalable Event-Driven Web  Applications on AWS",
       subtitle: "Rahul Shivalkar",
+      speaker: "Rahul Shivalkar",
     },
     {
       time: "14:30",
       title: "Building Devops for agentic AI ",
       subtitle: "Shubham Londhe",
+      speaker: "Shubham Londhe",
     },
     {
       time: "15:00",
       title: "Activity",
       subtitle: "Interactive Activity",
+      speaker: null,
     },
     {
       time: "15:30",
       title: "Fireside Chat with cloud captains",
       subtitle: "Informal discussion with cloud leaders and closing remarks",
+      speaker: null,
     },
   ];
 
@@ -126,7 +140,13 @@ const AgendaSection = () => {
                   <div className="agenda-time">{item.time}</div>
                   <div className="agenda-details">
                     <h3 className="agenda-item-title">{item.title}</h3>
-                    <p className="agenda-item-subtitle">{item.subtitle}</p>
+                    <p className="agenda-item-subtitle">
+                      {item.speaker ? (
+                        <span className="speaker-name">{item.subtitle}</span>
+                      ) : (
+                        item.subtitle
+                      )}
+                    </p>
                   </div>
                 </div>
               </div>

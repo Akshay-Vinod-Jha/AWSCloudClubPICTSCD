@@ -198,6 +198,15 @@ Structured timeline / Mission sequence area
   margin: 0;
 }
 
+/* Speaker Names in Yellow */
+.speaker-name {
+  color: #ffff00;
+  text-shadow:
+    2px 2px 0 var(--pixel-black),
+    0 0 8px rgba(255, 255, 0, 0.5);
+  font-weight: bold;
+}
+
 /* Responsive Design */
 @media (max-width: 1100px) {
   .agenda-content {
