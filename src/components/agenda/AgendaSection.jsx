@@ -24,8 +24,24 @@ const AgendaSection = () => {
     },
     {
       time: "10:00",
-      title: "Speaker Sessions",
-      subtitle: "Expert talks on cloud technologies and trends",
+      title: "Roadmap to Golden Jacket and Certifications  move to First",
+      subtitle: "Abhinivesh Jain",
+    },
+    {
+      time: "10:30",
+      title:
+        "Engineering for Efficiency: How Enterprise  Architects Drive Cost Optimized Architecture on  AWS",
+      subtitle: "Anand Mehta",
+    },
+    {
+      time: "11:00",
+      title: "Getting Started with Spec-Driven Development  on AWS with Kiro",
+      subtitle: "Sankalp Sandeep Paranjpe",
+    },
+    {
+      time: "11:30",
+      title: "Amazon QuickSuit ",
+      subtitle: "Saurabh Agrawal",
     },
     {
       time: "12:00",
@@ -34,28 +50,28 @@ const AgendaSection = () => {
     },
     {
       time: "13:00",
-      title: "AI/ML ARC",
-      subtitle: "AI/ML in cloud computing",
+      title: "Intelligent Event Agent",
+      subtitle: "Ramandeep Chandna",
     },
     {
       time: "13:30",
-      title: "DevOps ARC",
-      subtitle: "DevOps in cloud computing",
+      title: "Scaling Kubernetes on AWS: Smart Autoscaling  with Karpenter",
+      subtitle: "Akshay Ithape",
     },
     {
       time: "14:00",
-      title: "Serverless ARC",
-      subtitle: "Serverless computing in the cloud",
+      title: "Designing Scalable Event-Driven Web  Applications on AWS",
+      subtitle: "Rahul Shivalkar",
     },
     {
       time: "14:30",
-      title: "Activity",
-      subtitle: "Interactive Activity",
+      title: "Building Devops for agentic AI ",
+      subtitle: "Shubham Londhe",
     },
     {
       time: "15:00",
-      title: "Lightning Talks",
-      subtitle: "Quick presentations from community members",
+      title: "Activity",
+      subtitle: "Interactive Activity",
     },
     {
       time: "15:30",
