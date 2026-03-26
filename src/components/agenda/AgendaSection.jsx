@@ -21,22 +21,22 @@ const AgendaSection = () => {
     },
     {
       time: "09:30",
-      title: "Panel Discussion",
-      subtitle: "Discussing the future of cloud in learning",
-      speaker: null,
-    },
-    {
-      time: "10:00",
       title: "Roadmap to Golden Jacket and Certifications  move to First",
       subtitle: "Abhinivesh Jain",
       speaker: "Abhinivesh Jain",
     },
     {
-      time: "10:30",
+      time: "10:00",
       title:
         "Engineering for Efficiency: How Enterprise  Architects Drive Cost Optimized Architecture on  AWS",
       subtitle: "Anand Mehta",
       speaker: "Anand Mehta",
+    },
+    {
+      time: "10:30",
+      title: "Panel Discussion",
+      subtitle: null,
+      speaker: null,
     },
     {
       time: "11:00",
@@ -76,20 +76,26 @@ const AgendaSection = () => {
     },
     {
       time: "14:30",
+      title: "Fireside Chat with Captains",
+      subtitle: null,
+      speaker: null,
+    },
+    {
+      time: "15:00",
       title: "Building Devops for agentic AI ",
       subtitle: "Shubham Londhe",
       speaker: "Shubham Londhe",
     },
     {
-      time: "15:00",
-      title: "Activity",
-      subtitle: "Interactive Activity",
+      time: "15:30",
+      title: "Closing Remarks",
+      subtitle: null,
       speaker: null,
     },
     {
-      time: "15:30",
-      title: "Fireside Chat with cloud captains",
-      subtitle: "Informal discussion with cloud leaders and closing remarks",
+      time: "16:00",
+      title: "END OF PROGRAM",
+      subtitle: null,
       speaker: null,
     },
   ];
